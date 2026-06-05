@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -15,1086 +15,251 @@
   <meta property="og:description" content="Quán nướng trẻ trung, phù hợp tụ tập bạn bè, ăn tối và đặt bàn nhóm." />
   <meta property="og:type" content="website" />
 
-  <style>
-    :root {
-      --bg: #111111;
-      --surface: #1a1a1a;
-      --surface-2: #222222;
-      --primary: #ff6a00;
-      --primary-dark: #d94f00;
-      --secondary: #ffc247;
-      --text: #ffffff;
-      --muted: #b5b5b5;
-      --border: #2a2a2a;
-      --success: #22c55e;
-      --danger: #ff3b30;
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --radius-md: 14px;
-      --shadow-fire: 0 0 35px rgba(255, 106, 0, 0.35);
-      --max-width: 1180px;
-    }
+  <!-- Custom CSS assets -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Inter, "Be Vietnam Pro", Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(255, 106, 0, 0.18), transparent 32rem),
-        radial-gradient(circle at top right, rgba(255, 194, 71, 0.12), transparent 30rem),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(100% - 32px, var(--max-width));
-      margin: 0 auto;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid rgba(255, 194, 71, 0.35);
-      background: rgba(255, 106, 0, 0.12);
-      color: var(--secondary);
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 48px;
-      padding: 0 22px;
-      border-radius: 999px;
-      font-weight: 800;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: 0.25s ease;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #120900;
-      box-shadow: var(--shadow-fire);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 0 45px rgba(255, 106, 0, 0.5);
-    }
-
-    .btn-outline {
-      border-color: rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.06);
-      color: var(--text);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--primary);
-      background: rgba(255, 106, 0, 0.12);
-    }
-
-    .section {
-      padding: 90px 0;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 24px;
-      margin-bottom: 34px;
-    }
-
-    .section-kicker {
-      color: var(--primary);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      font-size: 13px;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-    }
-
-    .section-desc {
-      max-width: 520px;
-      color: var(--muted);
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(18px);
-      background: rgba(17, 17, 17, 0.72);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .nav {
-      height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 950;
-      letter-spacing: -0.03em;
-      font-size: 20px;
-    }
-
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #ff6a00, #ffc247);
-      color: #1a0b00;
-      box-shadow: var(--shadow-fire);
-      font-size: 22px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      color: var(--muted);
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .nav-links a:hover {
-      color: var(--secondary);
-    }
-
-    .mobile-menu {
-      display: none;
-      font-size: 28px;
-    }
-
-    .hero {
-      position: relative;
-      min-height: calc(100vh - 76px);
-      display: grid;
-      align-items: center;
-      overflow: hidden;
-      padding: 70px 0;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(17, 17, 17, 0.96) 0%, rgba(17, 17, 17, 0.75) 44%, rgba(17, 17, 17, 0.35) 100%),
-        url("assets/restaurant-space/background-baner.jpg");
-      background-size: cover;
-      background-position: center;
-      z-index: -2;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 540px;
-      height: 540px;
-      right: -120px;
-      bottom: -180px;
-      background: radial-gradient(circle, rgba(255, 106, 0, 0.38), transparent 62%);
-      z-index: -1;
-      animation: pulseFire 4s ease-in-out infinite;
-    }
-
-    @keyframes pulseFire {
-
-      0%,
-      100% {
-        transform: scale(1);
-        opacity: .8;
-      }
-
-      50% {
-        transform: scale(1.08);
-        opacity: 1;
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#111111',
+            surface: '#1a1a1a',
+            'surface-2': '#222222',
+            primary: {
+              DEFAULT: '#ff6a00',
+              dark: '#d94f00',
+            },
+            secondary: '#ffc247',
+            text: '#ffffff',
+            muted: '#b5b5b5',
+            border: '#2a2a2a',
+            success: '#22c55e',
+            danger: '#ff3b30',
+          },
+          borderRadius: {
+            'xl': '28px',
+            'lg': '20px',
+            'md': '14px',
+          },
+          boxShadow: {
+            'fire': '0 0 35px rgba(255, 106, 0, 0.35)',
+          },
+          fontFamily: {
+            sans: ['Inter', '"Be Vietnam Pro"', 'Arial', 'sans-serif'],
+          }
+        }
       }
     }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .hero h1 {
-      margin-top: 20px;
-      font-size: clamp(44px, 7vw, 86px);
-      line-height: 0.95;
-      letter-spacing: -0.075em;
-    }
-
-    .hero h1 span {
-      color: var(--secondary);
-      text-shadow: 0 0 32px rgba(255, 106, 0, 0.4);
-    }
-
-    .hero p {
-      margin-top: 22px;
-      color: #dedede;
-      font-size: 19px;
-      max-width: 620px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 44px;
-      max-width: 620px;
-    }
-
-    .stat-card {
-      padding: 20px;
-      border-radius: var(--radius-lg);
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.11);
-    }
-
-    .stat-card strong {
-      display: block;
-      font-size: 27px;
-      color: var(--secondary);
-      line-height: 1;
-    }
-
-    .stat-card span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .hero-card {
-      padding: 20px;
-      border-radius: 34px;
-      background: rgba(26, 26, 26, 0.68);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
-    }
-
-    .hero-card img {
-      height: 360px;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 26px;
-    }
-
-    .hero-card-info {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 18px 6px 4px;
-    }
-
-    .hero-card-info h3 {
-      font-size: 22px;
-    }
-
-    .price {
-      color: var(--secondary);
-      font-weight: 950;
-      font-size: 22px;
-    }
-
-    .feature-grid,
-    .menu-grid,
-    .combo-grid,
-    .review-grid {
-      display: grid;
-      gap: 20px;
-    }
-
-    .feature-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .feature-card,
-    .menu-card,
-    .combo-card,
-    .review-card,
-    .booking-panel,
-    .map-panel {
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-    }
-
-    .feature-card {
-      padding: 24px;
-    }
-
-    .feature-icon {
-      font-size: 32px;
-      margin-bottom: 18px;
-    }
-
-    .feature-card h3,
-    .menu-card h3,
-    .combo-card h3 {
-      font-size: 21px;
-      margin-bottom: 8px;
-    }
-
-    .feature-card p,
-    .menu-card p,
-    .combo-card p,
-    .review-card p {
-      color: var(--muted);
-    }
-
-    .menu-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .menu-card {
-      transition: 0.25s ease;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(255, 106, 0, .42);
-      box-shadow: 0 18px 60px rgba(0, 0, 0, .3);
-    }
-
-    .menu-img {
-      height: 190px;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .menu-body {
-      padding: 18px;
-    }
-
-    .menu-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 14px;
-    }
-
-    .mini-badge {
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: rgba(255, 106, 0, 0.16);
-      color: var(--secondary);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .combo-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .combo-card {
-      padding: 24px;
-      position: relative;
-    }
-
-    .combo-card.featured {
-      border-color: rgba(255, 194, 71, 0.5);
-      box-shadow: var(--shadow-fire);
-    }
-
-    .combo-list {
-      margin: 18px 0;
-      display: grid;
-      gap: 10px;
-      color: var(--muted);
-    }
-
-    .combo-list li {
-      list-style: none;
-    }
-
-    .combo-list li::before {
-      content: "🔥 ";
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr .8fr;
-      gap: 18px;
-    }
-
-    .gallery-item {
-      position: relative;
-      min-height: 250px;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, .1);
-      cursor: pointer;
-    }
-
-    .gallery-item.large {
-      grid-row: span 2;
-      min-height: 520px;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: 0.35s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.08);
-    }
-
-    .gallery-label {
-      position: absolute;
-      left: 18px;
-      bottom: 18px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, .55);
-      backdrop-filter: blur(10px);
-      font-weight: 800;
-    }
-
-    .booking-layout {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 24px;
-      align-items: stretch;
-    }
-
-    .booking-panel,
-    .map-panel {
-      padding: 28px;
-    }
-
-    .booking-form {
-      display: grid;
-      gap: 14px;
-      margin-top: 22px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      min-height: 50px;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, .12);
-      background: rgba(0, 0, 0, .24);
-      color: var(--text);
-      padding: 0 15px;
-      outline: none;
-    }
-
-    textarea {
-      padding-top: 14px;
-      min-height: 100px;
-      resize: vertical;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.16);
-    }
-
-    .map-box {
-      margin-top: 20px;
-      height: 360px;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, .12);
-    }
-
-    .review-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .review-card {
-      padding: 24px;
-    }
-
-    .stars {
-      color: var(--secondary);
-      letter-spacing: 3px;
-      margin-bottom: 14px;
-    }
-
-    .review-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 18px;
-      font-weight: 900;
-    }
-
-    .avatar {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: #170900;
-      display: grid;
-      place-items: center;
-      font-weight: 950;
-    }
-
-    footer {
-      padding: 54px 0 90px;
-      background: #0b0b0b;
-      border-top: 1px solid rgba(255, 255, 255, .08);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr 0.7fr 0.8fr;
-      gap: 30px;
-    }
-
-    .footer-grid p,
-    .footer-grid a {
-      color: var(--muted);
-      display: block;
-      margin-top: 10px;
-    }
-
-    .mobile-bottom-bar {
-      display: none;
-    }
-
-    @media (max-width: 980px) {
-
-      .nav-links,
-      .desktop-cta {
-        display: none;
-      }
-
-      .mobile-menu {
-        display: block;
-      }
-
-      .hero-grid,
-      .booking-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-card {
-        display: none;
-      }
-
-      .feature-grid,
-      .menu-grid,
-      .combo-grid,
-      .review-grid,
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-item.large {
-        min-height: 320px;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .section {
-        padding: 64px 0;
-      }
-
-      .section-header {
-        display: block;
-      }
-
-      .section-desc {
-        margin-top: 12px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 72px 0 50px;
-      }
-
-      .hero h1 {
-        font-size: 52px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .hero-actions .btn {
-        width: 100%;
-      }
-
-      .hero-stats,
-      .feature-grid,
-      .menu-grid,
-      .combo-grid,
-      .review-grid,
-      .footer-grid,
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .mobile-bottom-bar {
-        position: fixed;
-        z-index: 80;
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 8px;
-        padding: 10px;
-        border-radius: 22px;
-        background: rgba(17, 17, 17, .88);
-        backdrop-filter: blur(18px);
-        border: 1px solid rgba(255, 255, 255, .12);
-      }
-
-      .mobile-bottom-bar a {
-        display: grid;
-        place-items: center;
-        min-height: 48px;
-        border-radius: 16px;
-        background: rgba(255, 255, 255, .08);
-        font-size: 13px;
-        font-weight: 900;
-      }
-
-      .mobile-bottom-bar a.primary {
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        color: #170900;
-      }
-    }
-
-    /* Lightbox Styles */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(10, 10, 10, 0.95);
-      backdrop-filter: blur(12px);
-      z-index: 1000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-
-    .lightbox.active {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    .lightbox-close {
-      position: absolute;
-      top: 24px;
-      right: 24px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #fff;
-      font-size: 24px;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      transition: 0.25s ease;
-      z-index: 1010;
-    }
-
-    .lightbox-close:hover {
-      background: var(--primary);
-      border-color: var(--primary);
-      color: #000;
-      transform: rotate(90deg);
-    }
-
-    .lightbox-content {
-      position: relative;
-      width: min(90%, 800px);
-      height: min(70vh, 500px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox-img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      border-radius: var(--radius-lg);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .lightbox-nav {
-      position: absolute;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      pointer-events: none;
-      padding: 0 20px;
-    }
-
-    .lightbox-btn {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #fff;
-      font-size: 20px;
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      pointer-events: all;
-      transition: 0.25s ease;
-    }
-
-    .lightbox-btn:hover {
-      background: var(--secondary);
-      border-color: var(--secondary);
-      color: #120900;
-      transform: scale(1.08);
-    }
-
-    .lightbox-info {
-      margin-top: 24px;
-      text-align: center;
-      color: #fff;
-      max-width: 600px;
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .lightbox-caption {
-      font-size: 18px;
-      font-weight: 700;
-      margin-bottom: 6px;
-      letter-spacing: -0.02em;
-    }
-
-    .lightbox-counter {
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    .lightbox-dots {
-      display: flex;
-      gap: 8px;
-      margin-top: 16px;
-    }
-
-    .lightbox-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.25);
-      cursor: pointer;
-      transition: 0.25s ease;
-    }
-
-    .lightbox-dot.active {
-      background: var(--primary);
-      transform: scale(1.3);
-    }
-
-    /* Floating Contact Buttons */
-    .floating-contact {
-      position: fixed;
-      right: 24px;
-      bottom: 24px;
-      z-index: 999;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .contact-btn {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      cursor: pointer;
-      position: relative;
-    }
-
-    .contact-btn:hover {
-      transform: translateY(-5px) scale(1.08);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-    }
-
-    .contact-btn.zalo {
-      background: #0068ff;
-    }
-
-    .contact-btn.zalo .zalo-text {
-      font-size: 16px;
-      font-weight: 900;
-      font-family: Arial, sans-serif;
-      font-style: italic;
-      letter-spacing: -1px;
-    }
-
-    .contact-btn.messenger {
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-    }
-
-    @media (max-width: 640px) {
-      .floating-contact {
-        bottom: 96px;
-        /* Floating above the mobile bottom bar */
-        right: 16px;
-      }
-
-      .contact-btn {
-        width: 48px;
-        height: 48px;
-      }
-
-      .contact-btn.zalo .zalo-text {
-        font-size: 16px;
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-bg text-text font-sans leading-relaxed;
       }
     }
   </style>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="logo" href="#">
-        <span class="logo-mark">🔥</span>
+  <header
+    class="sticky top-0 z-50 backdrop-blur-[18px] bg-[rgba(17,17,17,0.72)] border-b border-[rgba(255,255,255,0.08)]">
+    <div class="max-w-[1180px] mx-auto px-4 w-full h-[76px] flex items-center justify-between">
+      <a class="flex items-center gap-3 font-[950] tracking-[-0.03em] text-xl" href="#">
+        <span
+          class="w-[42px] h-[42px] grid place-items-center rounded-md bg-gradient-to-br from-[#ff6a00] to-[#ffc247] text-[#1a0b00] shadow-fire text-[22px]">🔥</span>
         <span>Trạm Nướng<br />Bất Ổn</span>
       </a>
 
-      <nav class="nav-links">
-        <a href="#menu">Menu</a>
-        <a href="#combo">Combo</a>
-        <a href="#gallery">Không gian</a>
-        <a href="#booking">Đặt bàn</a>
-        <a href="#map">Chỉ đường</a>
+      <nav class="nav-links flex items-center gap-[28px] text-muted font-bold text-[14px] max-[980px]:hidden">
+        <a href="#menu" class="hover:text-secondary">Menu</a>
+        <a href="#combo" class="hover:text-secondary">Combo</a>
+        <a href="#gallery" class="hover:text-secondary">Không gian</a>
+        <a href="#booking" class="hover:text-secondary">Đặt bàn</a>
+        <a href="#map" class="hover:text-secondary">Chỉ đường</a>
       </nav>
 
-      <a class="btn btn-primary desktop-cta" href="#booking">Đặt bàn ngay</a>
-      <div class="mobile-menu">☰</div>
+      <a class="desktop-cta inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap bg-gradient-to-br from-primary to-secondary text-[#120900] shadow-fire hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(255,106,0,0.5)] max-[980px]:hidden"
+        href="#booking">Đặt bàn ngay</a>
+      <div class="mobile-menu hidden max-[980px]:block text-[28px] cursor-pointer">☰</div>
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
+    <!-- Hero Section -->
+    <section
+      class="hero relative min-h-[calc(100vh-76px)] max-sm:min-h-0 grid items-center overflow-hidden py-[70px] max-sm:pt-[72px] max-sm:pb-[50px]">
+      <div
+        class="max-w-[1180px] mx-auto px-4 w-full grid grid-cols-[1.05fr_0.95fr] max-[980px]:grid-cols-1 gap-[50px] items-center">
         <div>
-          <span class="badge">🔥 BBQ • Đồ nướng • Tụ tập bạn bè</span>
-          <h1>Trạm Nướng <span>Bất Ổn</span></h1>
-          <p>
+          <span
+            class="inline-flex items-center gap-2 px-3.5 py-2 border border-[rgba(255,194,71,0.35)] bg-[rgba(255,106,0,0.12)] text-secondary rounded-full text-[13px] font-bold">🔥
+            BBQ • Đồ nướng • Tụ tập bạn bè</span>
+          <h1 class="mt-5 text-[clamp(44px,7vw,86px)] max-sm:text-[52px] leading-[0.95] tracking-[-0.075em] font-bold">
+            Trạm Nướng <span class="text-secondary [text-shadow:0_0_32px_rgba(255,106,0,0.4)]">Bất Ổn</span></h1>
+          <p class="mt-[22px] text-[#dedede] text-[19px] max-sm:text-[16px] max-w-[620px]">
             Trạm dừng chân cho team mê đồ nướng: combo nhóm, món nướng nóng hổi,
             không gian thoải mái cho ăn tối, sinh nhật và những buổi tụ tập cuối tuần.
           </p>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#menu">Xem menu</a>
-            <a class="btn btn-outline" href="#booking">Đặt bàn</a>
-            <a class="btn btn-outline" href="#map">Chỉ đường</a>
+          <div class="hero-actions flex flex-wrap gap-3.5 mt-[34px] max-sm:[&>.btn]:w-full">
+            <a class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap bg-gradient-to-br from-primary to-secondary text-[#120900] shadow-fire hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(255,106,0,0.5)]"
+              href="#menu">Xem menu</a>
+            <a class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.06)] text-white hover:border-primary hover:bg-[rgba(255,106,0,0.12)]"
+              href="#booking">Đặt bàn</a>
+            <a class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.06)] text-white hover:border-primary hover:bg-[rgba(255,106,0,0.12)]"
+              href="#map">Chỉ đường</a>
           </div>
 
-          <div class="hero-stats">
-            <div class="stat-card">
-              <strong>4.8★</strong>
-              <span>Đánh giá khách hàng</span>
+          <div class="hero-stats grid grid-cols-3 max-sm:grid-cols-1 gap-3.5 mt-[44px] max-w-[620px]">
+            <div class="stat-card p-5 rounded-lg bg-[rgba(255,255,255,0.07)] border border-[rgba(255,255,255,0.11)]">
+              <strong class="block text-[27px] text-secondary leading-none font-bold">4.8★</strong>
+              <span class="text-muted text-[13px]">Đánh giá khách hàng</span>
             </div>
-            <div class="stat-card">
-              <strong>20+</strong>
-              <span>Món nướng & combo</span>
+            <div class="stat-card p-5 rounded-lg bg-[rgba(255,255,255,0.07)] border border-[rgba(255,255,255,0.11)]">
+              <strong class="block text-[27px] text-secondary leading-none font-bold">20+</strong>
+              <span class="text-muted text-[13px]">Món nướng & combo</span>
             </div>
-            <div class="stat-card">
-              <strong>2-10</strong>
-              <span>Phù hợp nhóm bạn</span>
+            <div class="stat-card p-5 rounded-lg bg-[rgba(255,255,255,0.07)] border border-[rgba(255,255,255,0.11)]">
+              <strong class="block text-[27px] text-secondary leading-none font-bold">2-10</strong>
+              <span class="text-muted text-[13px]">Phù hợp nhóm bạn</span>
             </div>
           </div>
         </div>
 
-        <div class="hero-card">
-          <img src="assets/menu-image/combo-2.jpg" alt="Combo nướng tại Trạm Nướng Bất Ổn">
-          <div class="hero-card-info">
+        <div
+          class="hero-card p-5 rounded-[34px] bg-[rgba(26,26,26,0.68)] border border-[rgba(255,255,255,0.12)] backdrop-blur-md shadow-[0_30px_80px_rgba(0,0,0,0.35)] max-[980px]:hidden">
+          <img class="h-[360px] w-full object-cover rounded-[26px]" src="assets/menu-image/combo-2.jpg"
+            alt="Combo nướng tại Trạm Nướng Bất Ổn">
+          <div class="hero-card-info flex justify-between gap-[18px] pt-[18px] px-1.5 pb-1">
             <div>
-              <h3>Combo Nướng Bất Ổn</h3>
-              <p style="color: var(--muted)">Best seller cho nhóm 4 người</p>
+              <h3 class="text-[22px] font-bold">Combo Nướng Bất Ổn</h3>
+              <p class="text-muted">Best seller cho nhóm 4 người</p>
             </div>
-            <div class="price">299K</div>
+            <div class="price text-secondary font-[950] text-[22px]">299K</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
+    <!-- Why Choose Us Section -->
+    <section class="py-[90px] max-sm:py-[64px]">
+      <div class="max-w-[1180px] mx-auto px-4 w-full">
+        <div class="flex justify-between items-end gap-6 mb-[34px] max-sm:block">
           <div>
-            <div class="section-kicker">Vì sao nên ghé?</div>
-            <h2 class="section-title">Một điểm hẹn dễ ăn, dễ vui, dễ quay lại</h2>
+            <div class="text-primary font-black uppercase tracking-[0.14em] text-[13px] mb-2">Vì sao nên ghé?</div>
+            <!-- <h2 class="text-[clamp(30px,4vw,48px)] leading-[1.08] tracking-[-0.04em] font-bold">Một điểm hẹn dễ ăn, dễ
+              vui, dễ quay lại</h2> -->
           </div>
-          <p class="section-desc">Tập trung vào trải nghiệm nhanh: khách xem món, xem không gian, đặt bàn và mở Google
-            Maps chỉ trong vài chạm.</p>
+          <!-- <p class="max-w-[520px] text-muted max-sm:mt-3">Tập trung vào trải nghiệm nhanh: khách xem món, xem không
+            gian, đặt bàn và mở Google
+            Maps chỉ trong vài chạm.</p> -->
         </div>
 
-        <div class="feature-grid">
-          <div class="feature-card">
-            <div class="feature-icon">🥩</div>
-            <h3>Đồ nướng nóng tại bàn</h3>
-            <p>Món nướng thơm, hợp khẩu vị đi nhóm và ăn tối.</p>
+        <div class="feature-grid grid grid-cols-4 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
+          <div
+            class="feature-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-6">
+            <div class="text-[32px] mb-[18px]">🥩</div>
+            <h3 class="text-[21px] mb-2 font-bold">Đồ nướng nóng tại bàn</h3>
+            <p class="text-muted">Món nướng thơm, hợp khẩu vị đi nhóm và ăn tối.</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">🍻</div>
-            <h3>Hợp tụ tập</h3>
-            <p>Không gian trẻ trung cho bạn bè, sinh nhật, cuối tuần.</p>
+          <div
+            class="feature-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-6">
+            <div class="text-[32px] mb-[18px]">🍻</div>
+            <h3 class="text-[21px] mb-2 font-bold">Hợp tụ tập</h3>
+            <p class="text-muted">Không gian trẻ trung cho bạn bè, sinh nhật, cuối tuần.</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">💸</div>
-            <h3>Combo dễ chọn</h3>
-            <p>Combo 2 người, 4 người và nhóm đông, giá rõ ràng.</p>
+          <div
+            class="feature-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-6">
+            <div class="text-[32px] mb-[18px]">💸</div>
+            <h3 class="text-[21px] mb-2 font-bold">Combo dễ chọn</h3>
+            <p class="text-muted">Combo 2 người, 4 người và nhóm đông, giá rõ ràng.</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">📍</div>
-            <h3>Dễ tìm đường</h3>
-            <p>Tích hợp Google Maps, CTA chỉ đường nổi bật trên mobile.</p>
+          <div
+            class="feature-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-6">
+            <div class="text-[32px] mb-[18px]">📍</div>
+            <h3 class="text-[21px] mb-2 font-bold">Dễ tìm đường</h3>
+            <p class="text-muted">Tích hợp Google Maps, CTA chỉ đường nổi bật trên mobile.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="menu" class="section">
-      <div class="container">
-        <div class="section-header">
+    <!-- Menu Section -->
+    <section id="menu" class="py-[90px] max-sm:py-[64px] border-t border-[rgba(255,255,255,0.05)]">
+      <div class="max-w-[1180px] mx-auto px-4 w-full">
+        <div class="flex justify-between items-end gap-6 mb-[34px] max-sm:block">
           <div>
-            <div class="section-kicker">Menu nổi bật</div>
-            <h2 class="section-title">Món được gọi nhiều nhất</h2>
+            <div class="text-primary font-black uppercase tracking-[0.14em] text-[13px] mb-2">Menu nổi bật</div>
           </div>
-          <a class="btn btn-outline" href="#">Xem tất cả món</a>
+          <a class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.06)] text-white hover:border-primary hover:bg-[rgba(255,106,0,0.12)]"
+            href="#booking">Xem tất cả món</a>
         </div>
 
-        <div class="menu-grid">
-          <article class="menu-card">
-            <img class="menu-img" src="assets/menu-image/ba-chi-heo-nuong.jpg" alt="Ba chỉ nướng sốt BBQ">
-            <div class="menu-body">
-              <span class="mini-badge">Best seller</span>
-              <h3>Ba chỉ nướng BBQ</h3>
-              <p>Ba chỉ mềm, sốt đậm vị, nướng thơm trên than.</p>
-              <div class="menu-meta">
-                <strong class="price">89K</strong>
-                <a href="#booking">Đặt món</a>
+        <div class="menu-grid grid grid-cols-4 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
+          <article
+            class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+            <img class="h-[190px] w-full object-cover" src="assets/menu-image/ba-chi-heo-nuong.jpg"
+              alt="Ba chỉ nướng sốt BBQ">
+            <div class="p-[18px]">
+              <span
+                class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Best
+                seller</span>
+              <h3 class="text-[21px] mb-2 font-bold">Ba chỉ nướng BBQ</h3>
+              <p class="text-muted">Ba chỉ mềm, sốt đậm vị, nướng thơm trên than.</p>
+              <div class="flex justify-between items-center mt-3.5">
+                <strong class="text-secondary font-[950] text-[22px]">89K</strong>
               </div>
             </div>
           </article>
 
-          <article class="menu-card">
-            <img class="menu-img" src="assets/menu-image/bo-kobe.jpg" alt="Bò nướng">
-            <div class="menu-body">
-              <span class="mini-badge">Recommended</span>
-              <h3>Bò nướng sốt tiêu</h3>
-              <p>Thịt bò mềm, sốt tiêu cay nhẹ, ăn kèm rau.</p>
-              <div class="menu-meta">
-                <strong class="price">119K</strong>
-                <a href="#booking">Đặt món</a>
+          <article
+            class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+            <img class="h-[190px] w-full object-cover" src="assets/menu-image/bo-kobe.jpg" alt="Bò nướng">
+            <div class="p-[18px]">
+              <span
+                class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Recommended</span>
+              <h3 class="text-[21px] mb-2 font-bold">Bò nướng sốt tiêu</h3>
+              <p class="text-muted">Thịt bò mềm, sốt tiêu cay nhẹ, ăn kèm rau.</p>
+              <div class="flex justify-between items-center mt-3.5">
+                <strong class="text-secondary font-[950] text-[22px]">119K</strong>
               </div>
             </div>
           </article>
 
-          <article class="menu-card">
-            <img class="menu-img" src="assets/menu-image/mi-xao-hai-san.jpg" alt="Mì xào hải sản">
-            <div class="menu-body">
-              <span class="mini-badge">New</span>
-              <h3>Mì xào hải sản</h3>
-              <p>Sợi mì dai ngon, mực tôm tươi rói, món ăn no phù hợp cho nhóm đông.</p>
-              <div class="menu-meta">
-                <strong class="price">149K</strong>
-                <a href="#booking">Đặt món</a>
+          <article
+            class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+            <img class="h-[190px] w-full object-cover" src="assets/menu-image/mi-xao-hai-san.jpg" alt="Mì xào hải sản">
+            <div class="p-[18px]">
+              <span
+                class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">New</span>
+              <h3 class="text-[21px] mb-2 font-bold">Mì xào hải sản</h3>
+              <p class="text-muted">Sợi mì dai ngon, mực tôm tươi rói, món ăn no phù hợp cho nhóm đông.</p>
+              <div class="flex justify-between items-center mt-3.5">
+                <strong class="text-secondary font-[950] text-[22px]">149K</strong>
               </div>
             </div>
           </article>
 
-          <article class="menu-card">
-            <img class="menu-img" src="assets/menu-image/4-mon.jpg" alt="Mẹt nướng tổng hợp">
-            <div class="menu-body">
-              <span class="mini-badge">Combo</span>
-              <h3>Mẹt nướng tổng hợp</h3>
-              <p>Nhiều loại thịt, rau ăn kèm, phù hợp 3-4 người.</p>
-              <div class="menu-meta">
-                <strong class="price">199K</strong>
-                <a href="#booking">Đặt món</a>
+          <article
+            class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+            <img class="h-[190px] w-full object-cover" src="assets/menu-image/4-mon.jpg" alt="Mẹt nướng tổng hợp">
+            <div class="p-[18px]">
+              <span
+                class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Combo</span>
+              <h3 class="text-[21px] mb-2 font-bold">Mẹt nướng tổng hợp</h3>
+              <p class="text-muted">Nhiều loại thịt, rau ăn kèm, phù hợp 3-4 người.</p>
+              <div class="flex justify-between items-center mt-3.5">
+                <strong class="text-secondary font-[950] text-[22px]">199K</strong>
               </div>
             </div>
           </article>
@@ -1102,237 +267,281 @@
       </div>
     </section>
 
-    <section id="combo" class="section">
-      <div class="container">
-        <div class="section-header">
+    <!-- Combo Section -->
+    <section id="combo" class="py-[90px] max-sm:py-[64px] border-t border-[rgba(255,255,255,0.05)]">
+      <div class="max-w-[1180px] mx-auto px-4 w-full">
+        <div class="flex justify-between items-end gap-6 mb-[34px] max-sm:block">
           <div>
-            <div class="section-kicker">Combo nhóm</div>
-            <h2 class="section-title">Đi càng đông, càng dễ chọn</h2>
+            <div class="text-primary font-black uppercase tracking-[0.14em] text-[13px] mb-2">Combo nhóm</div>
           </div>
-          <p class="section-desc">Mockup hiển thị combo rõ ràng để sau này nối API động từ backend hoặc CMS.</p>
         </div>
 
-        <div class="combo-grid">
-          <article class="combo-card">
-            <span class="mini-badge">2 người</span>
-            <h3>Combo Hẹn Hò</h3>
-            <p>Phù hợp 2 người ăn tối nhẹ.</p>
-            <ul class="combo-list">
-              <li>Ba chỉ nướng</li>
-              <li>Bò sốt tiêu</li>
-              <li>Rau + kim chi</li>
-              <li>2 nước ngọt</li>
+        <div class="combo-grid grid grid-cols-3 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
+          <article
+            class="combo-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-6 relative">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">2
+              người</span>
+            <h3 class="text-[21px] mb-2 font-bold">Combo Hẹn Hò</h3>
+            <p class="text-muted">Phù hợp 2 người ăn tối nhẹ.</p>
+            <ul class="my-[18px] grid gap-2.5 text-muted list-none">
+              <li>🔥 Ba chỉ nướng</li>
+              <li>🔥 Bò sốt tiêu</li>
+              <li>🔥 Rau + kim chi</li>
+              <li>🔥 2 nước ngọt</li>
             </ul>
-            <div class="price">199K</div>
+            <div class="price text-secondary font-[950] text-[22px]">199K</div>
           </article>
 
-          <article class="combo-card featured">
-            <span class="mini-badge">Best choice</span>
-            <h3>Combo Bất Ổn</h3>
-            <p>Phù hợp nhóm 4 người, gọi nhanh, ăn no.</p>
-            <ul class="combo-list">
-              <li>Mẹt thịt tổng hợp</li>
-              <li>Hải sản nướng</li>
-              <li>Món ăn kèm</li>
-              <li>4 nước ngọt</li>
+          <article
+            class="combo-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,194,71,0.5)] rounded-xl overflow-hidden p-6 relative shadow-fire">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Best
+              choice</span>
+            <h3 class="text-[21px] mb-2 font-bold">Combo Bất Ổn</h3>
+            <p class="text-muted">Phù hợp nhóm 4 người, gọi nhanh, ăn no.</p>
+            <ul class="my-[18px] grid gap-2.5 text-muted list-none">
+              <li>🔥 Mẹt thịt tổng hợp</li>
+              <li>🔥 Hải sản nướng</li>
+              <li>🔥 Món ăn kèm</li>
+              <li>🔥 4 nước ngọt</li>
             </ul>
-            <div class="price">399K</div>
+            <div class="price text-secondary font-[950] text-[22px]">399K</div>
           </article>
 
-          <article class="combo-card">
-            <span class="mini-badge">Party</span>
-            <h3>Combo Tụ Tập</h3>
-            <p>Phù hợp sinh nhật, nhóm đông cuối tuần.</p>
-            <ul class="combo-list">
-              <li>2 mẹt nướng lớn</li>
-              <li>Hải sản + bò</li>
-              <li>Khoai / salad</li>
-              <li>Ưu đãi nước</li>
+          <article
+            class="combo-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-6 relative">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Party</span>
+            <h3 class="text-[21px] mb-2 font-bold">Combo Tụ Tập</h3>
+            <p class="text-muted">Phù hợp sinh nhật, nhóm đông cuối tuần.</p>
+            <ul class="my-[18px] grid gap-2.5 text-muted list-none">
+              <li>🔥 2 mẹt nướng lớn</li>
+              <li>🔥 Hải sản + bò</li>
+              <li>🔥 Khoai / salad</li>
+              <li>🔥 Ưu đãi nước</li>
             </ul>
-            <div class="price">699K</div>
+            <div class="price text-secondary font-[950] text-[22px]">699K</div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="gallery" class="section">
-      <div class="container">
-        <div class="section-header">
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-[90px] max-sm:py-[64px] border-t border-[rgba(255,255,255,0.05)]">
+      <div class="max-w-[1180px] mx-auto px-4 w-full">
+        <div class="flex justify-between items-end gap-6 mb-[34px] max-sm:block">
           <div>
-            <div class="section-kicker">Không gian quán</div>
-            <h2 class="section-title">Ảnh thật tạo niềm tin trước khi khách ghé</h2>
+            <div class="text-primary font-black uppercase tracking-[0.14em] text-[13px] mb-2">Không gian quán</div>
           </div>
         </div>
 
-        <div class="gallery-grid">
-          <div class="gallery-item large" data-category="khong-gian">
-            <img src="assets/restaurant-space/khong-gian-quan.jpg" alt="Không gian quán nướng">
-            <span class="gallery-label">Không gian tụ tập</span>
+        <div class="gallery-grid grid grid-cols-[1.2fr_0.8fr_0.8fr] max-[980px]:grid-cols-1 gap-[18px]">
+          <div
+            class="gallery-item group relative rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] cursor-pointer row-span-2 min-h-[520px] max-[980px]:min-h-[320px]"
+            data-category="khong-gian">
+            <img class="w-full h-full object-cover transition duration-350 ease-in-out group-hover:scale-[1.08]"
+              src="assets/restaurant-space/khong-gian-quan.jpg" alt="Không gian quán nướng">
+            <span
+              class="absolute left-[18px] bottom-[18px] px-3 py-2 rounded-full bg-[rgba(0,0,0,0.55)] backdrop-blur-[10px] font-extrabold">Không
+              gian tụ tập</span>
           </div>
-          <div class="gallery-item" data-category="mon-nuong">
-            <img src="assets/menu-image/vu-heo-nuong.jpg" alt="Món nướng hấp dẫn">
-            <span class="gallery-label">Món nướng</span>
+          <div
+            class="gallery-item group relative min-h-[250px] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] cursor-pointer"
+            data-category="mon-nuong">
+            <img class="w-full h-full object-cover transition duration-350 ease-in-out group-hover:scale-[1.08]"
+              src="assets/menu-image/vu-heo-nuong.jpg" alt="Món nướng hấp dẫn">
+            <span
+              class="absolute left-[18px] bottom-[18px] px-3 py-2 rounded-full bg-[rgba(0,0,0,0.55)] backdrop-blur-[10px] font-extrabold">Món
+              nướng</span>
           </div>
-          <div class="gallery-item" data-category="ban-be">
-            <img src="assets/restaurant-space/khach-ghe-1.jpg" alt="Bạn bè tụ tập">
-            <span class="gallery-label">Bạn bè</span>
+          <div
+            class="gallery-item group relative min-h-[250px] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] cursor-pointer"
+            data-category="ban-be">
+            <img class="w-full h-full object-cover transition duration-350 ease-in-out group-hover:scale-[1.08]"
+              src="assets/restaurant-space/khach-ghe-1.jpg" alt="Bạn bè tụ tập">
+            <span
+              class="absolute left-[18px] bottom-[18px] px-3 py-2 rounded-full bg-[rgba(0,0,0,0.55)] backdrop-blur-[10px] font-extrabold">Bạn
+              bè</span>
           </div>
-          <div class="gallery-item" data-category="nuong-tai-ban">
-            <img src="assets/restaurant-space/khach-ghe-2.jpg" alt="Bếp nướng">
-            <span class="gallery-label">Nướng tại bàn</span>
+          <div
+            class="gallery-item group relative min-h-[250px] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] cursor-pointer"
+            data-category="nuong-tai-ban">
+            <img class="w-full h-full object-cover transition duration-350 ease-in-out group-hover:scale-[1.08]"
+              src="assets/restaurant-space/khach-ghe-2.jpg" alt="Bếp nướng">
+            <span
+              class="absolute left-[18px] bottom-[18px] px-3 py-2 rounded-full bg-[rgba(0,0,0,0.55)] backdrop-blur-[10px] font-extrabold">Nướng
+              tại bàn</span>
           </div>
-          <div class="gallery-item" data-category="sinh-nhat">
-            <img src="assets/restaurant-space/trang-tri-sinh-nhat.jpg" alt="Sinh nhật tại quán">
-            <span class="gallery-label">Sinh nhật</span>
+          <div
+            class="gallery-item group relative min-h-[250px] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] cursor-pointer"
+            data-category="sinh-nhat">
+            <img class="w-full h-full object-cover transition duration-350 ease-in-out group-hover:scale-[1.08]"
+              src="assets/restaurant-space/trang-tri-sinh-nhat.jpg" alt="Sinh nhật tại quán">
+            <span
+              class="absolute left-[18px] bottom-[18px] px-3 py-2 rounded-full bg-[rgba(0,0,0,0.55)] backdrop-blur-[10px] font-extrabold">Sinh
+              nhật</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
+    <!-- Reviews Section -->
+    <section class="py-[90px] max-sm:py-[64px] border-t border-[rgba(255,255,255,0.05)]">
+      <div class="max-w-[1180px] mx-auto px-4 w-full">
+        <div class="flex justify-between items-end gap-6 mb-[34px] max-sm:block">
           <div>
-            <div class="section-kicker">Review</div>
-            <h2 class="section-title">Khách nói gì về Trạm?</h2>
+            <div class="text-primary font-black uppercase tracking-[0.14em] text-[13px] mb-2">Review</div>
           </div>
         </div>
 
-        <div class="review-grid">
-          <article class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>Đồ nướng ngon, không gian thoải mái, đi nhóm bạn rất hợp. Sẽ quay lại.</p>
-            <div class="review-author"><span class="avatar">A</span> Anh Minh</div>
+        <div class="review-grid grid grid-cols-3 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
+          <article
+            class="review-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-6">
+            <div class="text-secondary tracking-[3px] mb-3.5">★★★★★</div>
+            <p class="text-muted">Đồ nướng ngon, không gian thoải mái, đi nhóm bạn rất hợp. Sẽ quay lại.</p>
+            <div class="review-author flex items-center gap-3 mt-[18px] font-black"><span
+                class="w-[42px] h-[42px] rounded-full bg-gradient-to-br from-primary to-secondary text-[#170900] grid place-items-center font-[950]">A</span>
+              Anh Minh</div>
           </article>
-          <article class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>Combo dễ chọn, giá ổn, nhân viên nhiệt tình. Rất hợp đi cuối tuần.</p>
-            <div class="review-author"><span class="avatar">L</span> Linh Nguyễn</div>
+          <article
+            class="review-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-6">
+            <div class="text-secondary tracking-[3px] mb-3.5">★★★★★</div>
+            <p class="text-muted">Combo dễ chọn, giá ổn, nhân viên nhiệt tình. Rất hợp đi cuối tuần.</p>
+            <div class="review-author flex items-center gap-3 mt-[18px] font-black"><span
+                class="w-[42px] h-[42px] rounded-full bg-gradient-to-br from-primary to-secondary text-[#170900] grid place-items-center font-[950]">L</span>
+              Linh Nguyễn</div>
           </article>
-          <article class="review-card">
-            <div class="stars">★★★★★</div>
-            <p>Quán có vibe trẻ, đồ ăn lên nhanh, mở Maps là tới được ngay.</p>
-            <div class="review-author"><span class="avatar">T</span> Tuấn Anh</div>
+          <article
+            class="review-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-6">
+            <div class="text-secondary tracking-[3px] mb-3.5">★★★★★</div>
+            <p class="text-muted">Quán có vibe trẻ, đồ ăn lên nhanh, mở Maps là tới được ngay.</p>
+            <div class="review-author flex items-center gap-3 mt-[18px] font-black"><span
+                class="w-[42px] h-[42px] rounded-full bg-gradient-to-br from-primary to-secondary text-[#170900] grid place-items-center font-[950]">T</span>
+              Tuấn Anh</div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="booking" class="section">
-      <div class="container booking-layout">
-        <div class="booking-panel">
-          <div class="section-kicker">Đặt bàn</div>
-          <h2 class="section-title">Giữ chỗ trước, tới là nướng</h2>
-          <p class="section-desc">Form này hiện là mockup UI. Sau này có thể gửi về API, Google Sheet, Zalo hoặc
-            Messenger.</p>
+    <!-- Booking & Maps Section -->
+    <section id="booking" class="py-[90px] max-sm:py-[64px] border-t border-[rgba(255,255,255,0.05)]">
+      <div class="max-w-[1180px] mx-auto px-4 w-full">
+        <div class="grid grid-cols-[0.9fr_1.1fr] max-[980px]:grid-cols-1 gap-6 items-stretch">
+          <div
+            class="booking-panel bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-[28px]">
+            <div class="text-primary font-black uppercase tracking-[0.14em] text-[13px] mb-2">Đặt bàn</div>
+            <form class="grid gap-3.5 mt-[22px]">
+              <input type="text" placeholder="Họ và tên"
+                class="w-full min-h-[50px] rounded-md border border-[rgba(255,255,255,0.12)] bg-[rgba(0,0,0,0.24)] text-white px-[15px] outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(255,106,0,0.16)]" />
+              <input type="tel" placeholder="Số điện thoại"
+                class="w-full min-h-[50px] rounded-md border border-[rgba(255,255,255,0.12)] bg-[rgba(0,0,0,0.24)] text-white px-[15px] outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(255,106,0,0.16)]" />
 
-          <form class="booking-form">
-            <input type="text" placeholder="Họ và tên" />
-            <input type="tel" placeholder="Số điện thoại" />
+              <div class="grid grid-cols-2 max-sm:grid-cols-1 gap-3.5">
+                <input type="date"
+                  class="w-full min-h-[50px] rounded-md border border-[rgba(255,255,255,0.12)] bg-[rgba(0,0,0,0.24)] text-white px-[15px] outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(255,106,0,0.16)]" />
+                <input type="time"
+                  class="w-full min-h-[50px] rounded-md border border-[rgba(255,255,255,0.12)] bg-[rgba(0,0,0,0.24)] text-white px-[15px] outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(255,106,0,0.16)]" />
+              </div>
 
-            <div class="form-row">
-              <input type="date" />
-              <input type="time" />
+              <select
+                class="w-full min-h-[50px] rounded-md border border-[rgba(255,255,255,0.12)] bg-[rgba(0,0,0,0.24)] text-white px-[15px] outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(255,106,0,0.16)] [&>option]:bg-surface">
+                <option>Số người</option>
+                <option>2 người</option>
+                <option>4 người</option>
+                <option>6 người</option>
+                <option>Trên 10 người</option>
+              </select>
+
+              <textarea placeholder="Ghi chú: sinh nhật, bàn ngoài trời, combo muốn đặt..."
+                class="w-full min-h-[100px] pt-3.5 rounded-md border border-[rgba(255,255,255,0.12)] bg-[rgba(0,0,0,0.24)] text-white px-[15px] outline-none focus:border-primary focus:shadow-[0_0_0_3px_rgba(255,106,0,0.16)] resize-y"></textarea>
+
+              <button type="button"
+                class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap bg-gradient-to-br from-primary to-secondary text-[#120900] shadow-fire hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(255,106,0,0.5)]">Gửi
+                yêu cầu đặt bàn</button>
+            </form>
+          </div>
+
+          <div id="map"
+            class="map-panel bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-[28px]">
+            <div class="text-primary font-black uppercase tracking-[0.14em] text-[13px] mb-2">Chỉ đường</div>
+
+            <div class="mt-5 h-[360px] rounded-[22px] overflow-hidden border border-[rgba(255,255,255,0.12)]">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.067347901041!2d106.6524712!3d10.9838959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1006e4ec663%3A0x957c37f6840761de!2zVHLhuqFtIE7GsOG7m25nIELhuqV0IOG7lG4!5e0!3m2!1svi!2s!4v1717586200000!5m2!1svi!2s"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
-
-            <select>
-              <option>Số người</option>
-              <option>2 người</option>
-              <option>4 người</option>
-              <option>6 người</option>
-              <option>Trên 10 người</option>
-            </select>
-
-            <textarea placeholder="Ghi chú: sinh nhật, bàn ngoài trời, combo muốn đặt..."></textarea>
-
-            <button type="button" class="btn btn-primary">Gửi yêu cầu đặt bàn</button>
-          </form>
-        </div>
-
-        <div id="map" class="map-panel">
-          <div class="section-kicker">Chỉ đường</div>
-          <h2 class="section-title">Tìm Trạm trên Google Maps</h2>
-          <p class="section-desc">Tọa độ từ Google Maps: 10.9838959, 106.6546599.</p>
-
-          <div class="map-box">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.067347901041!2d106.6524712!3d10.9838959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1006e4ec663%3A0x957c37f6840761de!2zVHLhuqFtIE7GsOG7m25nIELhuqV0IOG7lG4!5e0!3m2!1svi!2s!4v1717586200000!5m2!1svi!2s"
-              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-          <div style="margin-top: 20px; display: flex; justify-content: center;">
-            <a class="btn btn-primary"
-              href="https://www.google.com/maps/place/Tr%E1%BA%A1m+N%C6%B0%E1%BB%9Bng+B%E1%BA%A5t+%E1%BB%94n/@10.9838959,106.6546599,17z/data=!3m1!4b1!4m6!3m5!1s0x3174d1006e4ec663:0x957c37f6840761de!8m2!3d10.9838959!4d106.6546599!16s%2Fg%2F11z9vvyynw"
-              target="_blank" rel="noopener">
-              📍 Chỉ đường trên Google Maps
-            </a>
+            <div class="mt-5 flex justify-center">
+              <a class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap bg-gradient-to-br from-primary to-secondary text-[#120900] shadow-fire hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(255,106,0,0.5)]"
+                href="https://www.google.com/maps/place/Tr%E1%BA%A1m+N%C6%B0%E1%BB%9Bng+B%E1%BA%A5t+%E1%BB%94n/@10.9838959,106.6546599,17z/data=!3m1!4b1!4m6!3m5!1s0x3174d1006e4ec663:0x957c37f6840761de!8m2!3d10.9838959!4d106.6546599!16s%2Fg%2F11z9vvyynw"
+                target="_blank" rel="noopener">
+                📍 Chỉ đường trên Google Maps
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-grid">
+  <footer class="pt-[54px] pb-[90px] bg-[#0b0b0b] border-t border-[rgba(255,255,255,0.08)] text-muted">
+    <div
+      class="max-w-[1180px] mx-auto px-4 w-full grid grid-cols-[1.3fr_0.7fr_0.7fr_0.8fr] max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-[30px]">
       <div>
-        <a class="logo" href="#">
-          <span class="logo-mark">🔥</span>
+        <a class="flex items-center gap-3 font-[950] tracking-[-0.03em] text-xl text-white" href="#">
+          <span
+            class="w-[42px] h-[42px] grid place-items-center rounded-md bg-gradient-to-br from-[#ff6a00] to-[#ffc247] text-[#1a0b00] shadow-fire text-[22px]">🔥</span>
           <span>Trạm Nướng<br />Bất Ổn</span>
         </a>
-        <p>Quán nướng trẻ trung, phù hợp tụ tập bạn bè, ăn tối và sinh nhật tại khu vực Dĩ An - Bình Dương.</p>
+        <p class="mt-2.5">Quán nướng trẻ trung, phù hợp tụ tập bạn bè, ăn tối và sinh nhật tại khu vực Thủ Dầu Một -
+          Bình
+          Dương.</p>
       </div>
       <div>
-        <h3>Menu</h3>
-        <a href="#menu">Món nổi bật</a>
-        <a href="#combo">Combo</a>
-        <a href="#gallery">Không gian</a>
+        <h3 class="text-white font-bold mb-2">Menu</h3>
+        <a href="#menu" class="block mt-2.5 hover:text-secondary">Món nổi bật</a>
+        <a href="#combo" class="block mt-2.5 hover:text-secondary">Combo</a>
+        <a href="#gallery" class="block mt-2.5 hover:text-secondary">Không gian</a>
       </div>
       <div>
-        <h3>Liên hệ</h3>
-        <a href="tel:0352412123">Hotline: 0352412123</a>
+        <!-- Mockup hiển thị combo rõ ràng để sau này nối API động từ backend hoặc CMS. -->
+        <h3 class="text-white font-bold mb-2">Liên hệ</h3>
+        <a href="tel:0352412123" class="block mt-2.5 hover:text-secondary">Hotline: 0352412123</a>
         <a href="https://www.facebook.com/p/Tr%E1%BA%A1m-N%C6%B0%E1%BB%9Bng-B%E1%BA%A5t-%E1%BB%94n-61568815303097/"
-          target="_blank" rel="noopener">Facebook</a>
-        <a href="#map">Google Maps</a>
+          target="_blank" rel="noopener" class="block mt-2.5 hover:text-secondary">Facebook</a>
+        <a href="#map" class="block mt-2.5 hover:text-secondary">Google Maps</a>
       </div>
       <div>
-        <h3>Giờ mở cửa</h3>
-        <p>Thứ 2 - Chủ nhật</p>
-        <p>16:00 - 23:00</p>
+        <h3 class="text-white font-bold mb-2">Giờ mở cửa</h3>
+        <p class="mt-2.5">Thứ 2 - Chủ nhật</p>
+        <p class="mt-2.5">16:00 - 23:00</p>
       </div>
     </div>
   </footer>
 
-  <nav class="mobile-bottom-bar">
-    <a href="tel:0352412123">Gọi</a>
-    <a class="primary" href="#booking">Đặt bàn</a>
-    <a href="#map">Chỉ đường</a>
+  <nav
+    class="hidden max-sm:grid fixed z-[80] left-3 right-3 bottom-3 grid-cols-3 gap-2 p-2.5 rounded-[22px] bg-[rgba(17,17,17,0.88)] backdrop-blur-[18px] border border-[rgba(255,255,255,0.12)]">
+    <a class="grid place-items-center min-h-[48px] rounded-md bg-[rgba(255,255,255,0.08)] text-[13px] font-black text-white"
+      href="tel:0352412123">Gọi</a>
+    <a class="grid place-items-center min-h-[48px] rounded-md bg-gradient-to-br from-primary to-secondary text-[#170900] text-[13px] font-black"
+      href="#booking">Đặt bàn</a>
+    <a class="grid place-items-center min-h-[48px] rounded-md bg-[rgba(255,255,255,0.08)] text-[13px] font-black text-white"
+      href="#map">Chỉ đường</a>
   </nav>
 
-  <!-- Lightbox Element -->
-  <div id="lightbox" class="lightbox">
-    <button class="lightbox-close" aria-label="Đóng">&times;</button>
-    <div class="lightbox-content">
-      <img id="lightbox-img" class="lightbox-img" src="" alt="Gallery Image">
-      <div class="lightbox-nav">
-        <button id="lightbox-prev" class="lightbox-btn" aria-label="Ảnh trước">&#10094;</button>
-        <button id="lightbox-next" class="lightbox-btn" aria-label="Ảnh sau">&#10095;</button>
-      </div>
-    </div>
-    <div class="lightbox-info">
-      <div id="lightbox-caption" class="lightbox-caption">Tiêu đề ảnh</div>
-      <div id="lightbox-counter" class="lightbox-counter">1 / 5</div>
-      <div id="lightbox-dots" class="lightbox-dots"></div>
-    </div>
-  </div>
-
   <!-- Floating Contact Buttons -->
-  <div class="floating-contact">
-    <a href="https://zalo.me/0352412123" target="_blank" rel="noopener" class="contact-btn zalo" title="Chat Zalo">
+  <div class="fixed right-6 bottom-6 max-sm:bottom-[96px] max-sm:right-4 z-[999] flex flex-col gap-3">
+    <a href="https://zalo.me/0352412123" target="_blank" rel="noopener"
+      class="w-14 h-14 max-sm:w-12 max-sm:h-12 rounded-full flex items-center justify-center text-white shadow-[0_8px_24px_rgba(0,0,0,0.25)] transition-all duration-300 [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)] cursor-pointer relative hover:-translate-y-1.25 hover:scale-[1.08] hover:shadow-[0_12px_30px_rgba(0,0,0,0.35)] bg-[#0068ff] [&>.zalo-text]:text-base [&>.zalo-text]:font-black [&>.zalo-text]:font-[Arial,sans-serif] [&>.zalo-text]:italic [&>.zalo-text]:tracking-[-1px]"
+      title="Chat Zalo">
       <span class="zalo-text">Zalo</span>
     </a>
     <a href="https://m.me/p/Tr%E1%BA%A1m-N%C6%B0%E1%BB%9Bng-B%E1%BA%A5t-%E1%BB%94n-61568815303097/" target="_blank"
-      rel="noopener" class="contact-btn messenger" title="Chat Messenger">
+      rel="noopener"
+      class="w-14 h-14 max-sm:w-12 max-sm:h-12 rounded-full flex items-center justify-center text-white shadow-[0_8px_24px_rgba(0,0,0,0.25)] transition-all duration-300 [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)] cursor-pointer relative hover:-translate-y-1.25 hover:scale-[1.08] hover:shadow-[0_12px_30px_rgba(0,0,0,0.35)] bg-gradient-to-br from-[#00c6ff] to-[#0072ff]"
+      title="Chat Messenger">
       <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
         <path
           d="M12 2C6.48 2 2 6.15 2 11.26c0 2.91 1.45 5.52 3.7 7.22V22l3.39-1.86c.88.25 1.82.38 2.78.38 5.52 0 10-4.15 10-9.26S17.52 2 12 2zm1.1 12.38l-2.45-2.61-4.78 2.61 5.26-5.58 2.49 2.61 4.74-2.61-5.26 5.58z" />
@@ -1340,209 +549,33 @@
     </a>
   </div>
 
-  <script>
-    const cards = document.querySelectorAll(".menu-card, .combo-card, .feature-card, .review-card, .gallery-item");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.animate(
-            [
-              { opacity: 0, transform: "translateY(24px)" },
-              { opacity: 1, transform: "translateY(0)" }
-            ],
-            { duration: 650, easing: "ease-out", fill: "forwards" }
-          );
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
+  <!-- Lightbox Element -->
+  <div id="lightbox" class="lightbox">
+    <button
+      class="lightbox-close absolute top-6 right-6 w-12 h-12 rounded-full bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.15)] text-white text-[24px] grid place-items-center cursor-pointer transition duration-250 ease-in-out z-[1010] hover:bg-primary hover:border-primary hover:text-black hover:rotate-90"
+      aria-label="Đóng">&times;</button>
+    <div class="relative w-[min(90%,800px)] h-[min(70vh,500px)] flex items-center justify-center">
+      <img id="lightbox-img"
+        class="lightbox-img max-w-full max-h-full object-contain rounded-lg shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-[rgba(255,255,255,0.1)] transition-all duration-300 ease-in-out"
+        src="" alt="Gallery Image">
+      <div class="absolute w-full flex justify-between pointer-events-none px-5">
+        <button id="lightbox-prev"
+          class="w-[50px] h-[50px] rounded-full bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.15)] text-white text-[20px] grid place-items-center cursor-pointer pointer-events-auto transition duration-250 ease-in-out hover:bg-secondary hover:border-secondary hover:text-[#120900] hover:scale-[1.08]"
+          aria-label="Ảnh trước">&#10094;</button>
+        <button id="lightbox-next"
+          class="w-[50px] h-[50px] rounded-full bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.15)] text-white text-[20px] grid place-items-center cursor-pointer pointer-events-auto transition duration-250 ease-in-out hover:bg-secondary hover:border-secondary hover:text-[#120900] hover:scale-[1.08]"
+          aria-label="Ảnh sau">&#10095;</button>
+      </div>
+    </div>
+    <div class="mt-6 text-center text-white max-w-[600px] px-5 flex flex-col items-center">
+      <div id="lightbox-caption" class="text-[18px] font-bold mb-1.5 tracking-[-0.02em]">Tiêu đề ảnh</div>
+      <div id="lightbox-counter" class="text-[13px] text-muted font-medium">1 / 5</div>
+      <div id="lightbox-dots" class="flex gap-2 mt-4"></div>
+    </div>
+  </div>
 
-    cards.forEach((card) => {
-      card.style.opacity = 0;
-      observer.observe(card);
-    });
-
-    // Lightbox Logic
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const lightboxCaption = document.getElementById("lightbox-caption");
-    const lightboxCounter = document.getElementById("lightbox-counter");
-    const lightboxDots = document.getElementById("lightbox-dots");
-    const prevBtn = document.getElementById("lightbox-prev");
-    const nextBtn = document.getElementById("lightbox-next");
-    const closeBtn = lightbox.querySelector(".lightbox-close");
-
-    let currentCategory = "";
-    let currentIndex = 0;
-
-    const galleryData = {
-      "khong-gian": {
-        title: "Không gian tụ tập",
-        images: [
-          "assets/restaurant-space/khong-gian-quan.jpg",
-          "assets/restaurant-space/khong-gian-quan-1.jpg",
-          "assets/restaurant-space/background-baner.jpg"
-        ]
-      },
-      "mon-nuong": {
-        title: "Món nướng hấp dẫn",
-        images: [
-          "assets/menu-image/vu-heo-nuong.jpg",
-          "assets/menu-image/ba-chi-heo-nuong.jpg",
-          "assets/menu-image/bo-kobe.jpg",
-          "assets/menu-image/4-mon.jpg",
-          "assets/menu-image/combo-1.jpg",
-          "assets/menu-image/combo-2.jpg"
-        ]
-      },
-      "ban-be": {
-        title: "Bạn bè tụ hợp",
-        images: [
-          "assets/restaurant-space/khach-ghe-1.jpg",
-          "assets/restaurant-space/khach-ghe-3.jpg",
-          "assets/restaurant-space/khach-ghe-4.jpg",
-          "assets/restaurant-space/khach-ghe-6.jpg",
-          "assets/restaurant-space/khach-ghe-8.jpg"
-        ]
-      },
-      "nuong-tai-ban": {
-        title: "Trải nghiệm nướng tại bàn",
-        images: [
-          "assets/restaurant-space/khach-ghe-2.jpg",
-          "assets/restaurant-space/khach-ghe-5.jpg",
-          "assets/restaurant-space/khach-ghe-7.jpg",
-          "assets/restaurant-space/khach-ghe-9.jpg",
-          "assets/restaurant-space/khach-ghe-10.jpg"
-        ]
-      },
-      "sinh-nhat": {
-        title: "Đặt tiệc sinh nhật",
-        images: [
-          "assets/restaurant-space/trang-tri-sinh-nhat.jpg",
-          "assets/restaurant-space/trang-tri-sinh-nhat-1.jpg",
-          "assets/restaurant-space/trang-tri-sinh-nhat-2.jpg",
-          "assets/restaurant-space/trang-tri-sinh-nhat-3.jpg"
-        ]
-      }
-    };
-
-    function updateLightbox() {
-      const category = galleryData[currentCategory];
-      const imgSrc = category.images[currentIndex];
-
-      lightboxImg.style.opacity = 0;
-      lightboxImg.style.transform = "scale(0.95)";
-
-      setTimeout(() => {
-        lightboxImg.src = imgSrc;
-        lightboxCaption.textContent = category.title;
-        lightboxCounter.textContent = `${currentIndex + 1} / ${category.images.length}`;
-
-        const dots = lightboxDots.querySelectorAll(".lightbox-dot");
-        dots.forEach((dot, idx) => {
-          dot.classList.toggle("active", idx === currentIndex);
-        });
-
-        lightboxImg.style.opacity = 1;
-        lightboxImg.style.transform = "scale(1)";
-      }, 150);
-    }
-
-    function openLightbox(category, index = 0) {
-      currentCategory = category;
-      currentIndex = index;
-
-      lightboxDots.innerHTML = "";
-      const catImages = galleryData[category].images;
-      catImages.forEach((_, idx) => {
-        const dot = document.createElement("div");
-        dot.className = "lightbox-dot" + (idx === index ? " active" : "");
-        dot.addEventListener("click", () => {
-          currentIndex = idx;
-          updateLightbox();
-        });
-        lightboxDots.appendChild(dot);
-      });
-
-      updateLightbox();
-      lightbox.classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove("active");
-      document.body.style.overflow = "";
-    }
-
-    function showNext() {
-      const category = galleryData[currentCategory];
-      currentIndex = (currentIndex + 1) % category.images.length;
-      updateLightbox();
-    }
-
-    function showPrev() {
-      const category = galleryData[currentCategory];
-      currentIndex = (currentIndex - 1 + category.images.length) % category.images.length;
-      updateLightbox();
-    }
-
-    document.querySelectorAll(".gallery-item").forEach((item) => {
-      item.addEventListener("click", () => {
-        const category = item.getAttribute("data-category");
-        if (category && galleryData[category]) {
-          openLightbox(category, 0);
-        }
-      });
-    });
-
-    prevBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      showPrev();
-    });
-
-    nextBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      showNext();
-    });
-
-    closeBtn.addEventListener("click", closeLightbox);
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox || e.target === lightbox.querySelector(".lightbox-content")) {
-        closeLightbox();
-      }
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (!lightbox.classList.contains("active")) return;
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowRight") showNext();
-      if (e.key === "ArrowLeft") showPrev();
-    });
-
-    // Touch/Swipe Support
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    lightbox.addEventListener("touchstart", (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    lightbox.addEventListener("touchend", (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, { passive: true });
-
-    function handleSwipe() {
-      const swipeThreshold = 50;
-      if (touchEndX < touchStartX - swipeThreshold) {
-        showNext();
-      }
-      if (touchEndX > touchStartX + swipeThreshold) {
-        showPrev();
-      }
-    }
-  </script>
+  <!-- Shared Javascript -->
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

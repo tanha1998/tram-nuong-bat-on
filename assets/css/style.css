@@ -1,0 +1,96 @@
+/* Custom Styles for Trạm Nướng Bất Ổn */
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(255, 106, 0, 0.18), transparent 32rem),
+    radial-gradient(circle at top right, rgba(255, 194, 71, 0.12), transparent 30rem),
+    #111111;
+}
+
+/* Hero Section Pseudo-elements */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(17, 17, 17, 0.96) 0%, rgba(17, 17, 17, 0.75) 44%, rgba(17, 17, 17, 0.35) 100%),
+    url("../restaurant-space/background-baner.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 540px;
+  height: 540px;
+  right: -120px;
+  bottom: -180px;
+  background: radial-gradient(circle, rgba(255, 106, 0, 0.38), transparent 62%);
+  z-index: -1;
+  animation: pulseFire 4s ease-in-out infinite;
+}
+
+@keyframes pulseFire {
+  0%, 100% {
+    transform: scale(1);
+    opacity: .8;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+/* Mobile Navigation Drawer Override */
+@media (max-width: 980px) {
+  .nav-links.active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background: #1a1a1a;
+    padding: 20px;
+    border-bottom: 1px solid #2a2a2a;
+    gap: 16px;
+    z-index: 40;
+  }
+}
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.lightbox-dot.active {
+  background: #ff6a00 !important; /* primary color */
+  transform: scale(1.3);
+}
