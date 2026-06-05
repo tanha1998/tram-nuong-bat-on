@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Trạm Nướng Bất Ổn | Quán Nướng Ngon Tại Dĩ An Bình Dương</title>
+  <meta name="description"
+    content="Trạm Nướng Bất Ổn - quán nướng, BBQ, combo nhóm, không gian tụ tập bạn bè tại Dĩ An, Bình Dương." />
+  <meta name="keywords"
+    content="Trạm Nướng Bất Ổn, quán nướng Dĩ An, quán nướng Bình Dương, BBQ Dĩ An, đồ nướng Bình Dương" />
+
+  <meta property="og:title" content="Trạm Nướng Bất Ổn" />
+  <meta property="og:description" content="Quán nướng trẻ trung, phù hợp tụ tập bạn bè, ăn tối và đặt bàn nhóm." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root {
+      --bg: #111111;
+      --surface: #1a1a1a;
+      --surface-2: #222222;
+      --primary: #ff6a00;
+      --primary-dark: #d94f00;
+      --secondary: #ffc247;
+      --text: #ffffff;
+      --muted: #b5b5b5;
+      --border: #2a2a2a;
+      --success: #22c55e;
+      --danger: #ff3b30;
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --shadow-fire: 0 0 35px rgba(255, 106, 0, 0.35);
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, "Be Vietnam Pro", Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255, 106, 0, 0.18), transparent 32rem),
+        radial-gradient(circle at top right, rgba(255, 194, 71, 0.12), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 194, 71, 0.35);
+      background: rgba(255, 106, 0, 0.12);
+      color: var(--secondary);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #120900;
+      box-shadow: var(--shadow-fire);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 45px rgba(255, 106, 0, 0.5);
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      background: rgba(255, 106, 0, 0.12);
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      color: var(--primary);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .section-desc {
+      max-width: 520px;
+      color: var(--muted);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(17, 17, 17, 0.72);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 950;
+      letter-spacing: -0.03em;
+      font-size: 20px;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #ff6a00, #ffc247);
+      color: #1a0b00;
+      box-shadow: var(--shadow-fire);
+      font-size: 22px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+
+    .mobile-menu {
+      display: none;
+      font-size: 28px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 76px);
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      padding: 70px 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(17, 17, 17, 0.96) 0%, rgba(17, 17, 17, 0.75) 44%, rgba(17, 17, 17, 0.35) 100%),
+        url("assets/restaurant-space/background-baner.jpg");
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 540px;
+      height: 540px;
+      right: -120px;
+      bottom: -180px;
+      background: radial-gradient(circle, rgba(255, 106, 0, 0.38), transparent 62%);
+      z-index: -1;
+      animation: pulseFire 4s ease-in-out infinite;
+    }
+
+    @keyframes pulseFire {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: .8;
+      }
+
+      50% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin-top: 20px;
+      font-size: clamp(44px, 7vw, 86px);
+      line-height: 0.95;
+      letter-spacing: -0.075em;
+    }
+
+    .hero h1 span {
+      color: var(--secondary);
+      text-shadow: 0 0 32px rgba(255, 106, 0, 0.4);
+    }
+
+    .hero p {
+      margin-top: 22px;
+      color: #dedede;
+      font-size: 19px;
+      max-width: 620px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 44px;
+      max-width: 620px;
+    }
+
+    .stat-card {
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 27px;
+      color: var(--secondary);
+      line-height: 1;
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-card {
+      padding: 20px;
+      border-radius: 34px;
+      background: rgba(26, 26, 26, 0.68);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .hero-card img {
+      height: 360px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 26px;
+    }
+
+    .hero-card-info {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 6px 4px;
+    }
+
+    .hero-card-info h3 {
+      font-size: 22px;
+    }
+
+    .price {
+      color: var(--secondary);
+      font-weight: 950;
+      font-size: 22px;
+    }
+
+    .feature-grid,
+    .menu-grid,
+    .combo-grid,
+    .review-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .feature-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .feature-card,
+    .menu-card,
+    .combo-card,
+    .review-card,
+    .booking-panel,
+    .map-panel {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .feature-card {
+      padding: 24px;
+    }
+
+    .feature-icon {
+      font-size: 32px;
+      margin-bottom: 18px;
+    }
+
+    .feature-card h3,
+    .menu-card h3,
+    .combo-card h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p,
+    .menu-card p,
+    .combo-card p,
+    .review-card p {
+      color: var(--muted);
+    }
+
+    .menu-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .menu-card {
+      transition: 0.25s ease;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(255, 106, 0, .42);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, .3);
+    }
+
+    .menu-img {
+      height: 190px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .menu-body {
+      padding: 18px;
+    }
+
+    .menu-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .mini-badge {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: rgba(255, 106, 0, 0.16);
+      color: var(--secondary);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .combo-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .combo-card {
+      padding: 24px;
+      position: relative;
+    }
+
+    .combo-card.featured {
+      border-color: rgba(255, 194, 71, 0.5);
+      box-shadow: var(--shadow-fire);
+    }
+
+    .combo-list {
+      margin: 18px 0;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .combo-list li {
+      list-style: none;
+    }
+
+    .combo-list li::before {
+      content: "🔥 ";
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr;
+      gap: 18px;
+    }
+
+    .gallery-item {
+      position: relative;
+      min-height: 250px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .gallery-item.large {
+      grid-row: span 2;
+      min-height: 520px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-label {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, .55);
+      backdrop-filter: blur(10px);
+      font-weight: 800;
+    }
+
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .booking-panel,
+    .map-panel {
+      padding: 28px;
+    }
+
+    .booking-form {
+      display: grid;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 50px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(0, 0, 0, .24);
+      color: var(--text);
+      padding: 0 15px;
+      outline: none;
+    }
+
+    textarea {
+      padding-top: 14px;
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.16);
+    }
+
+    .map-box {
+      margin-top: 20px;
+      height: 360px;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    .review-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .review-card {
+      padding: 24px;
+    }
+
+    .stars {
+      color: var(--secondary);
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 18px;
+      font-weight: 900;
+    }
+
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #170900;
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+    }
+
+    footer {
+      padding: 54px 0 90px;
+      background: #0b0b0b;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr 0.7fr 0.8fr;
+      gap: 30px;
+    }
+
+    .footer-grid p,
+    .footer-grid a {
+      color: var(--muted);
+      display: block;
+      margin-top: 10px;
+    }
+
+    .mobile-bottom-bar {
+      display: none;
+    }
+
+    @media (max-width: 980px) {
+
+      .nav-links,
+      .desktop-cta {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .hero-grid,
+      .booking-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        display: none;
+      }
+
+      .feature-grid,
+      .menu-grid,
+      .combo-grid,
+      .review-grid,
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item.large {
+        min-height: 320px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 64px 0;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .section-desc {
+        margin-top: 12px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 72px 0 50px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-stats,
+      .feature-grid,
+      .menu-grid,
+      .combo-grid,
+      .review-grid,
+      .footer-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .mobile-bottom-bar {
+        position: fixed;
+        z-index: 80;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+        padding: 10px;
+        border-radius: 22px;
+        background: rgba(17, 17, 17, .88);
+        backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, .12);
+      }
+
+      .mobile-bottom-bar a {
+        display: grid;
+        place-items: center;
+        min-height: 48px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, .08);
+        font-size: 13px;
+        font-weight: 900;
+      }
+
+      .mobile-bottom-bar a.primary {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #170900;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="#">
+        <span class="logo-mark">🔥</span>
+        <span>Trạm Nướng<br />Bất Ổn</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#combo">Combo</a>
+        <a href="#gallery">Không gian</a>
+        <a href="#booking">Đặt bàn</a>
+        <a href="#map">Chỉ đường</a>
+      </nav>
+
+      <a class="btn btn-primary desktop-cta" href="#booking">Đặt bàn ngay</a>
+      <div class="mobile-menu">☰</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">🔥 BBQ • Đồ nướng • Tụ tập bạn bè</span>
+          <h1>Trạm Nướng <span>Bất Ổn</span></h1>
+          <p>
+            Trạm dừng chân cho team mê đồ nướng: combo nhóm, món nướng nóng hổi,
+            không gian thoải mái cho ăn tối, sinh nhật và những buổi tụ tập cuối tuần.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#menu">Xem menu</a>
+            <a class="btn btn-outline" href="#booking">Đặt bàn</a>
+            <a class="btn btn-outline" href="#map">Chỉ đường</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong>4.8★</strong>
+              <span>Đánh giá khách hàng</span>
+            </div>
+            <div class="stat-card">
+              <strong>20+</strong>
+              <span>Món nướng & combo</span>
+            </div>
+            <div class="stat-card">
+              <strong>2-10</strong>
+              <span>Phù hợp nhóm bạn</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="assets/menu-image/combo-2.jpg" alt="Combo nướng tại Trạm Nướng Bất Ổn">
+          <div class="hero-card-info">
+            <div>
+              <h3>Combo Nướng Bất Ổn</h3>
+              <p style="color: var(--muted)">Best seller cho nhóm 4 người</p>
+            </div>
+            <div class="price">299K</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Vì sao nên ghé?</div>
+            <h2 class="section-title">Một điểm hẹn dễ ăn, dễ vui, dễ quay lại</h2>
+          </div>
+          <p class="section-desc">Tập trung vào trải nghiệm nhanh: khách xem món, xem không gian, đặt bàn và mở Google
+            Maps chỉ trong vài chạm.</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🥩</div>
+            <h3>Đồ nướng nóng tại bàn</h3>
+            <p>Món nướng thơm, hợp khẩu vị đi nhóm và ăn tối.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🍻</div>
+            <h3>Hợp tụ tập</h3>
+            <p>Không gian trẻ trung cho bạn bè, sinh nhật, cuối tuần.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💸</div>
+            <h3>Combo dễ chọn</h3>
+            <p>Combo 2 người, 4 người và nhóm đông, giá rõ ràng.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📍</div>
+            <h3>Dễ tìm đường</h3>
+            <p>Tích hợp Google Maps, CTA chỉ đường nổi bật trên mobile.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Menu nổi bật</div>
+            <h2 class="section-title">Món được gọi nhiều nhất</h2>
+          </div>
+          <a class="btn btn-outline" href="#">Xem tất cả món</a>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card">
+            <img class="menu-img" src="assets/menu-image/ba-chi-heo-nuong.jpg" alt="Ba chỉ nướng sốt BBQ">
+            <div class="menu-body">
+              <span class="mini-badge">Best seller</span>
+              <h3>Ba chỉ nướng BBQ</h3>
+              <p>Ba chỉ mềm, sốt đậm vị, nướng thơm trên than.</p>
+              <div class="menu-meta">
+                <strong class="price">89K</strong>
+                <a href="#booking">Đặt món</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img class="menu-img" src="assets/menu-image/bo-kobe.jpg" alt="Bò nướng">
+            <div class="menu-body">
+              <span class="mini-badge">Recommended</span>
+              <h3>Bò nướng sốt tiêu</h3>
+              <p>Thịt bò mềm, sốt tiêu cay nhẹ, ăn kèm rau.</p>
+              <div class="menu-meta">
+                <strong class="price">119K</strong>
+                <a href="#booking">Đặt món</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img class="menu-img" src="assets/menu-image/mi-xao-hai-san.jpg" alt="Mì xào hải sản">
+            <div class="menu-body">
+              <span class="mini-badge">New</span>
+              <h3>Mì xào hải sản</h3>
+              <p>Sợi mì dai ngon, mực tôm tươi rói, món ăn no phù hợp cho nhóm đông.</p>
+              <div class="menu-meta">
+                <strong class="price">149K</strong>
+                <a href="#booking">Đặt món</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <img class="menu-img" src="assets/menu-image/4-mon.jpg" alt="Mẹt nướng tổng hợp">
+            <div class="menu-body">
+              <span class="mini-badge">Combo</span>
+              <h3>Mẹt nướng tổng hợp</h3>
+              <p>Nhiều loại thịt, rau ăn kèm, phù hợp 3-4 người.</p>
+              <div class="menu-meta">
+                <strong class="price">199K</strong>
+                <a href="#booking">Đặt món</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="combo" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Combo nhóm</div>
+            <h2 class="section-title">Đi càng đông, càng dễ chọn</h2>
+          </div>
+          <p class="section-desc">Mockup hiển thị combo rõ ràng để sau này nối API động từ backend hoặc CMS.</p>
+        </div>
+
+        <div class="combo-grid">
+          <article class="combo-card">
+            <span class="mini-badge">2 người</span>
+            <h3>Combo Hẹn Hò</h3>
+            <p>Phù hợp 2 người ăn tối nhẹ.</p>
+            <ul class="combo-list">
+              <li>Ba chỉ nướng</li>
+              <li>Bò sốt tiêu</li>
+              <li>Rau + kim chi</li>
+              <li>2 nước ngọt</li>
+            </ul>
+            <div class="price">199K</div>
+          </article>
+
+          <article class="combo-card featured">
+            <span class="mini-badge">Best choice</span>
+            <h3>Combo Bất Ổn</h3>
+            <p>Phù hợp nhóm 4 người, gọi nhanh, ăn no.</p>
+            <ul class="combo-list">
+              <li>Mẹt thịt tổng hợp</li>
+              <li>Hải sản nướng</li>
+              <li>Món ăn kèm</li>
+              <li>4 nước ngọt</li>
+            </ul>
+            <div class="price">399K</div>
+          </article>
+
+          <article class="combo-card">
+            <span class="mini-badge">Party</span>
+            <h3>Combo Tụ Tập</h3>
+            <p>Phù hợp sinh nhật, nhóm đông cuối tuần.</p>
+            <ul class="combo-list">
+              <li>2 mẹt nướng lớn</li>
+              <li>Hải sản + bò</li>
+              <li>Khoai / salad</li>
+              <li>Ưu đãi nước</li>
+            </ul>
+            <div class="price">699K</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Không gian quán</div>
+            <h2 class="section-title">Ảnh thật tạo niềm tin trước khi khách ghé</h2>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item large">
+            <img src="assets/restaurant-space/khong-gian-quan.jpg" alt="Không gian quán nướng">
+            <span class="gallery-label">Không gian tụ tập</span>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/menu-image/vu-heo-nuong.jpg" alt="Món nướng hấp dẫn">
+            <span class="gallery-label">Món nướng</span>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/restaurant-space/khach-ghe-1.jpg" alt="Bạn bè tụ tập">
+            <span class="gallery-label">Bạn bè</span>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/restaurant-space/khach-ghe-2.jpg" alt="Bếp nướng">
+            <span class="gallery-label">Nướng tại bàn</span>
+          </div>
+          <div class="gallery-item">
+            <img src="assets/restaurant-space/trang-tri-sinh-nhat.jpg" alt="Sinh nhật tại quán">
+            <span class="gallery-label">Sinh nhật</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-kicker">Review</div>
+            <h2 class="section-title">Khách nói gì về Trạm?</h2>
+          </div>
+        </div>
+
+        <div class="review-grid">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>Đồ nướng ngon, không gian thoải mái, đi nhóm bạn rất hợp. Sẽ quay lại.</p>
+            <div class="review-author"><span class="avatar">A</span> Anh Minh</div>
+          </article>
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>Combo dễ chọn, giá ổn, nhân viên nhiệt tình. Rất hợp đi cuối tuần.</p>
+            <div class="review-author"><span class="avatar">L</span> Linh Nguyễn</div>
+          </article>
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>Quán có vibe trẻ, đồ ăn lên nhanh, mở Maps là tới được ngay.</p>
+            <div class="review-author"><span class="avatar">T</span> Tuấn Anh</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="booking" class="section">
+      <div class="container booking-layout">
+        <div class="booking-panel">
+          <div class="section-kicker">Đặt bàn</div>
+          <h2 class="section-title">Giữ chỗ trước, tới là nướng</h2>
+          <p class="section-desc">Form này hiện là mockup UI. Sau này có thể gửi về API, Google Sheet, Zalo hoặc
+            Messenger.</p>
+
+          <form class="booking-form">
+            <input type="text" placeholder="Họ và tên" />
+            <input type="tel" placeholder="Số điện thoại" />
+
+            <div class="form-row">
+              <input type="date" />
+              <input type="time" />
+            </div>
+
+            <select>
+              <option>Số người</option>
+              <option>2 người</option>
+              <option>4 người</option>
+              <option>6 người</option>
+              <option>Trên 10 người</option>
+            </select>
+
+            <textarea placeholder="Ghi chú: sinh nhật, bàn ngoài trời, combo muốn đặt..."></textarea>
+
+            <button type="button" class="btn btn-primary">Gửi yêu cầu đặt bàn</button>
+          </form>
+        </div>
+
+        <div id="map" class="map-panel">
+          <div class="section-kicker">Chỉ đường</div>
+          <h2 class="section-title">Tìm Trạm trên Google Maps</h2>
+          <p class="section-desc">Tọa độ từ Google Maps: 10.9838959, 106.6546599.</p>
+
+          <div class="map-box">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.067347901041!2d106.6524712!3d10.9838959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1006e4ec663%3A0x957c37f6840761de!2zVHLhuqFtIE7GsOG7m25nIELhuqV0IOG7lG4!5e0!3m2!1svi!2s!4v1717586200000!5m2!1svi!2s"
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div style="margin-top: 20px; display: flex; justify-content: center;">
+            <a class="btn btn-primary"
+              href="https://www.google.com/maps/place/Tr%E1%BA%A1m+N%C6%B0%E1%BB%9Bng+B%E1%BA%A5t+%E1%BB%94n/@10.9838959,106.6546599,17z/data=!3m1!4b1!4m6!3m5!1s0x3174d1006e4ec663:0x957c37f6840761de!8m2!3d10.9838959!4d106.6546599!16s%2Fg%2F11z9vvyynw"
+              target="_blank" rel="noopener">
+              📍 Chỉ đường trên Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="#">
+          <span class="logo-mark">🔥</span>
+          <span>Trạm Nướng<br />Bất Ổn</span>
+        </a>
+        <p>Quán nướng trẻ trung, phù hợp tụ tập bạn bè, ăn tối và sinh nhật tại khu vực Dĩ An - Bình Dương.</p>
+      </div>
+      <div>
+        <h3>Menu</h3>
+        <a href="#menu">Món nổi bật</a>
+        <a href="#combo">Combo</a>
+        <a href="#gallery">Không gian</a>
+      </div>
+      <div>
+        <h3>Liên hệ</h3>
+        <a href="tel:0352412123">Hotline: 0352412123</a>
+        <a href="https://www.facebook.com/p/Tr%E1%BA%A1m-N%C6%B0%E1%BB%9Bng-B%E1%BA%A5t-%E1%BB%94n-61568815303097/"
+          target="_blank" rel="noopener">Facebook</a>
+        <a href="#map">Google Maps</a>
+      </div>
+      <div>
+        <h3>Giờ mở cửa</h3>
+        <p>Thứ 2 - Chủ nhật</p>
+        <p>16:00 - 23:00</p>
+      </div>
+    </div>
+  </footer>
+
+  <nav class="mobile-bottom-bar">
+    <a href="tel:0352412123">Gọi</a>
+    <a class="primary" href="#booking">Đặt bàn</a>
+    <a href="#map">Chỉ đường</a>
+  </nav>
+
+  <script>
+    const cards = document.querySelectorAll(".menu-card, .combo-card, .feature-card, .review-card, .gallery-item");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.animate(
+            [
+              { opacity: 0, transform: "translateY(24px)" },
+              { opacity: 1, transform: "translateY(0)" }
+            ],
+            { duration: 650, easing: "ease-out", fill: "forwards" }
+          );
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    cards.forEach((card) => {
+      card.style.opacity = 0;
+      observer.observe(card);
+    });
+  </script>
+</body>
+
+</html>
