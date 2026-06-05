@@ -475,6 +475,7 @@
       border-radius: var(--radius-xl);
       overflow: hidden;
       border: 1px solid rgba(255, 255, 255, .1);
+      cursor: pointer;
     }
 
     .gallery-item.large {
@@ -726,6 +727,209 @@
         color: #170900;
       }
     }
+
+    /* Lightbox Styles */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 24px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: 0.25s ease;
+      z-index: 1010;
+    }
+
+    .lightbox-close:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #000;
+      transform: rotate(90deg);
+    }
+
+    .lightbox-content {
+      position: relative;
+      width: min(90%, 800px);
+      height: min(70vh, 500px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .lightbox-nav {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      pointer-events: none;
+      padding: 0 20px;
+    }
+
+    .lightbox-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 20px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      pointer-events: all;
+      transition: 0.25s ease;
+    }
+
+    .lightbox-btn:hover {
+      background: var(--secondary);
+      border-color: var(--secondary);
+      color: #120900;
+      transform: scale(1.08);
+    }
+
+    .lightbox-info {
+      margin-top: 24px;
+      text-align: center;
+      color: #fff;
+      max-width: 600px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .lightbox-caption {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+
+    .lightbox-counter {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .lightbox-dots {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .lightbox-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.25);
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .lightbox-dot.active {
+      background: var(--primary);
+      transform: scale(1.3);
+    }
+
+    /* Floating Contact Buttons */
+    .floating-contact {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .contact-btn:hover {
+      transform: translateY(-5px) scale(1.08);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .contact-btn.zalo {
+      background: #0068ff;
+    }
+
+    .contact-btn.zalo .zalo-text {
+      font-size: 16px;
+      font-weight: 900;
+      font-family: Arial, sans-serif;
+      font-style: italic;
+      letter-spacing: -1px;
+    }
+
+    .contact-btn.messenger {
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+    }
+
+    @media (max-width: 640px) {
+      .floating-contact {
+        bottom: 96px;
+        /* Floating above the mobile bottom bar */
+        right: 16px;
+      }
+
+      .contact-btn {
+        width: 48px;
+        height: 48px;
+      }
+
+      .contact-btn.zalo .zalo-text {
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 
@@ -961,23 +1165,23 @@
         </div>
 
         <div class="gallery-grid">
-          <div class="gallery-item large">
+          <div class="gallery-item large" data-category="khong-gian">
             <img src="assets/restaurant-space/khong-gian-quan.jpg" alt="Không gian quán nướng">
             <span class="gallery-label">Không gian tụ tập</span>
           </div>
-          <div class="gallery-item">
+          <div class="gallery-item" data-category="mon-nuong">
             <img src="assets/menu-image/vu-heo-nuong.jpg" alt="Món nướng hấp dẫn">
             <span class="gallery-label">Món nướng</span>
           </div>
-          <div class="gallery-item">
+          <div class="gallery-item" data-category="ban-be">
             <img src="assets/restaurant-space/khach-ghe-1.jpg" alt="Bạn bè tụ tập">
             <span class="gallery-label">Bạn bè</span>
           </div>
-          <div class="gallery-item">
+          <div class="gallery-item" data-category="nuong-tai-ban">
             <img src="assets/restaurant-space/khach-ghe-2.jpg" alt="Bếp nướng">
             <span class="gallery-label">Nướng tại bàn</span>
           </div>
-          <div class="gallery-item">
+          <div class="gallery-item" data-category="sinh-nhat">
             <img src="assets/restaurant-space/trang-tri-sinh-nhat.jpg" alt="Sinh nhật tại quán">
             <span class="gallery-label">Sinh nhật</span>
           </div>
@@ -1105,6 +1309,37 @@
     <a href="#map">Chỉ đường</a>
   </nav>
 
+  <!-- Lightbox Element -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Đóng">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" class="lightbox-img" src="" alt="Gallery Image">
+      <div class="lightbox-nav">
+        <button id="lightbox-prev" class="lightbox-btn" aria-label="Ảnh trước">&#10094;</button>
+        <button id="lightbox-next" class="lightbox-btn" aria-label="Ảnh sau">&#10095;</button>
+      </div>
+    </div>
+    <div class="lightbox-info">
+      <div id="lightbox-caption" class="lightbox-caption">Tiêu đề ảnh</div>
+      <div id="lightbox-counter" class="lightbox-counter">1 / 5</div>
+      <div id="lightbox-dots" class="lightbox-dots"></div>
+    </div>
+  </div>
+
+  <!-- Floating Contact Buttons -->
+  <div class="floating-contact">
+    <a href="https://zalo.me/0352412123" target="_blank" rel="noopener" class="contact-btn zalo" title="Chat Zalo">
+      <span class="zalo-text">Zalo</span>
+    </a>
+    <a href="https://m.me/p/Tr%E1%BA%A1m-N%C6%B0%E1%BB%9Bng-B%E1%BA%A5t-%E1%BB%94n-61568815303097/" target="_blank"
+      rel="noopener" class="contact-btn messenger" title="Chat Messenger">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+        <path
+          d="M12 2C6.48 2 2 6.15 2 11.26c0 2.91 1.45 5.52 3.7 7.22V22l3.39-1.86c.88.25 1.82.38 2.78.38 5.52 0 10-4.15 10-9.26S17.52 2 12 2zm1.1 12.38l-2.45-2.61-4.78 2.61 5.26-5.58 2.49 2.61 4.74-2.61-5.26 5.58z" />
+      </svg>
+    </a>
+  </div>
+
   <script>
     const cards = document.querySelectorAll(".menu-card, .combo-card, .feature-card, .review-card, .gallery-item");
     const observer = new IntersectionObserver((entries) => {
@@ -1126,6 +1361,187 @@
       card.style.opacity = 0;
       observer.observe(card);
     });
+
+    // Lightbox Logic
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const lightboxCounter = document.getElementById("lightbox-counter");
+    const lightboxDots = document.getElementById("lightbox-dots");
+    const prevBtn = document.getElementById("lightbox-prev");
+    const nextBtn = document.getElementById("lightbox-next");
+    const closeBtn = lightbox.querySelector(".lightbox-close");
+
+    let currentCategory = "";
+    let currentIndex = 0;
+
+    const galleryData = {
+      "khong-gian": {
+        title: "Không gian tụ tập",
+        images: [
+          "assets/restaurant-space/khong-gian-quan.jpg",
+          "assets/restaurant-space/khong-gian-quan-1.jpg",
+          "assets/restaurant-space/background-baner.jpg"
+        ]
+      },
+      "mon-nuong": {
+        title: "Món nướng hấp dẫn",
+        images: [
+          "assets/menu-image/vu-heo-nuong.jpg",
+          "assets/menu-image/ba-chi-heo-nuong.jpg",
+          "assets/menu-image/bo-kobe.jpg",
+          "assets/menu-image/4-mon.jpg",
+          "assets/menu-image/combo-1.jpg",
+          "assets/menu-image/combo-2.jpg"
+        ]
+      },
+      "ban-be": {
+        title: "Bạn bè tụ hợp",
+        images: [
+          "assets/restaurant-space/khach-ghe-1.jpg",
+          "assets/restaurant-space/khach-ghe-3.jpg",
+          "assets/restaurant-space/khach-ghe-4.jpg",
+          "assets/restaurant-space/khach-ghe-6.jpg",
+          "assets/restaurant-space/khach-ghe-8.jpg"
+        ]
+      },
+      "nuong-tai-ban": {
+        title: "Trải nghiệm nướng tại bàn",
+        images: [
+          "assets/restaurant-space/khach-ghe-2.jpg",
+          "assets/restaurant-space/khach-ghe-5.jpg",
+          "assets/restaurant-space/khach-ghe-7.jpg",
+          "assets/restaurant-space/khach-ghe-9.jpg",
+          "assets/restaurant-space/khach-ghe-10.jpg"
+        ]
+      },
+      "sinh-nhat": {
+        title: "Đặt tiệc sinh nhật",
+        images: [
+          "assets/restaurant-space/trang-tri-sinh-nhat.jpg",
+          "assets/restaurant-space/trang-tri-sinh-nhat-1.jpg",
+          "assets/restaurant-space/trang-tri-sinh-nhat-2.jpg",
+          "assets/restaurant-space/trang-tri-sinh-nhat-3.jpg"
+        ]
+      }
+    };
+
+    function updateLightbox() {
+      const category = galleryData[currentCategory];
+      const imgSrc = category.images[currentIndex];
+
+      lightboxImg.style.opacity = 0;
+      lightboxImg.style.transform = "scale(0.95)";
+
+      setTimeout(() => {
+        lightboxImg.src = imgSrc;
+        lightboxCaption.textContent = category.title;
+        lightboxCounter.textContent = `${currentIndex + 1} / ${category.images.length}`;
+
+        const dots = lightboxDots.querySelectorAll(".lightbox-dot");
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle("active", idx === currentIndex);
+        });
+
+        lightboxImg.style.opacity = 1;
+        lightboxImg.style.transform = "scale(1)";
+      }, 150);
+    }
+
+    function openLightbox(category, index = 0) {
+      currentCategory = category;
+      currentIndex = index;
+
+      lightboxDots.innerHTML = "";
+      const catImages = galleryData[category].images;
+      catImages.forEach((_, idx) => {
+        const dot = document.createElement("div");
+        dot.className = "lightbox-dot" + (idx === index ? " active" : "");
+        dot.addEventListener("click", () => {
+          currentIndex = idx;
+          updateLightbox();
+        });
+        lightboxDots.appendChild(dot);
+      });
+
+      updateLightbox();
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    function showNext() {
+      const category = galleryData[currentCategory];
+      currentIndex = (currentIndex + 1) % category.images.length;
+      updateLightbox();
+    }
+
+    function showPrev() {
+      const category = galleryData[currentCategory];
+      currentIndex = (currentIndex - 1 + category.images.length) % category.images.length;
+      updateLightbox();
+    }
+
+    document.querySelectorAll(".gallery-item").forEach((item) => {
+      item.addEventListener("click", () => {
+        const category = item.getAttribute("data-category");
+        if (category && galleryData[category]) {
+          openLightbox(category, 0);
+        }
+      });
+    });
+
+    prevBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      showPrev();
+    });
+
+    nextBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      showNext();
+    });
+
+    closeBtn.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox || e.target === lightbox.querySelector(".lightbox-content")) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("active")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
+    });
+
+    // Touch/Swipe Support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    lightbox.addEventListener("touchstart", (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    lightbox.addEventListener("touchend", (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        showNext();
+      }
+      if (touchEndX > touchStartX + swipeThreshold) {
+        showPrev();
+      }
+    }
   </script>
 </body>
 
