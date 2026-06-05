@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Intersection Observer for card animations
-  const cards = document.querySelectorAll(".menu-card, .combo-card, .feature-card, .review-card, .gallery-item");
+  const cards = document.querySelectorAll("main .menu-card, .combo-card, .feature-card, .review-card, .gallery-item");
   if (cards.length > 0) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -235,5 +235,93 @@ document.addEventListener("DOMContentLoaded", () => {
         showPrev();
       }
     }
+  }
+
+  // Menu Popup Logic
+  const menuPopup = document.getElementById("menu-popup");
+  const btnAllMenu = document.getElementById("btn-all-menu");
+
+  if (menuPopup && btnAllMenu) {
+    const closeX = menuPopup.querySelector(".menu-popup-close-x");
+    const btnClose = menuPopup.querySelector(".menu-popup-btn-close");
+    const orderLinks = menuPopup.querySelectorAll(".menu-popup-order");
+
+    function openPopup(e) {
+      e.preventDefault();
+      menuPopup.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closePopup() {
+      menuPopup.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    btnAllMenu.addEventListener("click", openPopup);
+
+    if (closeX) closeX.addEventListener("click", closePopup);
+    if (btnClose) btnClose.addEventListener("click", closePopup);
+
+    // Close when clicking outside of the content box
+    menuPopup.addEventListener("click", (e) => {
+      if (e.target === menuPopup) {
+        closePopup();
+      }
+    });
+
+    // Close when clicking an order link (scrolls to booking form)
+    orderLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        closePopup();
+      });
+    });
+
+    // Close on escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && menuPopup.classList.contains("active")) {
+        closePopup();
+      }
+    });
+  }
+
+  // Promotion Popup Logic (Load once using localStorage)
+  const promoPopup = document.getElementById("promo-popup");
+  if (promoPopup) {
+    const isPromoClosed = localStorage.getItem("promo-closed");
+    const closeX = document.getElementById("promo-popup-close-x");
+    const btnClose = document.getElementById("promo-popup-btn-close");
+    const btnBook = document.getElementById("promo-btn-book");
+
+    function closePromo() {
+      promoPopup.classList.remove("active");
+      document.body.style.overflow = "";
+      localStorage.setItem("promo-closed", "true");
+    }
+
+    if (!isPromoClosed) {
+      // Show popup after a small delay (1s) to improve user experience
+      setTimeout(() => {
+        promoPopup.classList.add("active");
+        document.body.style.overflow = "hidden";
+      }, 1000);
+    }
+
+    if (closeX) closeX.addEventListener("click", closePromo);
+    if (btnClose) btnClose.addEventListener("click", closePromo);
+    if (btnBook) btnBook.addEventListener("click", closePromo);
+
+    // Close on background click
+    promoPopup.addEventListener("click", (e) => {
+      if (e.target === promoPopup) {
+        closePromo();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && promoPopup.classList.contains("active")) {
+        closePromo();
+      }
+    });
   }
 });

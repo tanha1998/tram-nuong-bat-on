@@ -81,6 +81,7 @@
       </a>
 
       <nav class="nav-links flex items-center gap-[28px] text-muted font-bold text-[14px] max-[980px]:hidden">
+        <a href="#promotion" class="hover:text-secondary">Khuyến mãi</a>
         <a href="#menu" class="hover:text-secondary">Menu</a>
         <a href="#combo" class="hover:text-secondary">Combo</a>
         <a href="#gallery" class="hover:text-secondary">Không gian</a>
@@ -104,7 +105,7 @@
           <span
             class="inline-flex items-center gap-2 px-3.5 py-2 border border-[rgba(255,194,71,0.35)] bg-[rgba(255,106,0,0.12)] text-secondary rounded-full text-[13px] font-bold">🔥
             BBQ • Đồ nướng • Tụ tập bạn bè</span>
-          <h1 class="mt-5 text-[clamp(44px,7vw,86px)] max-sm:text-[52px] leading-[0.95] tracking-[-0.075em] font-bold">
+          <h1 class="mt-5 text-[clamp(44px,7vw,86px)] max-sm:text-[52px] leading-[1.2] tracking-[-0.075em] font-bold">
             Trạm Nướng <span class="text-secondary [text-shadow:0_0_32px_rgba(255,106,0,0.4)]">Bất Ổn</span></h1>
           <p class="mt-[22px] text-[#dedede] text-[19px] max-sm:text-[16px] max-w-[620px]">
             Trạm dừng chân cho team mê đồ nướng: combo nhóm, món nướng nóng hổi,
@@ -122,7 +123,7 @@
 
           <div class="hero-stats grid grid-cols-3 max-sm:grid-cols-1 gap-3.5 mt-[44px] max-w-[620px]">
             <div class="stat-card p-5 rounded-lg bg-[rgba(255,255,255,0.07)] border border-[rgba(255,255,255,0.11)]">
-              <strong class="block text-[27px] text-secondary leading-none font-bold">4.8★</strong>
+              <strong class="block text-[27px] text-secondary leading-none font-bold">5.0★</strong>
               <span class="text-muted text-[13px]">Đánh giá khách hàng</span>
             </div>
             <div class="stat-card p-5 rounded-lg bg-[rgba(255,255,255,0.07)] border border-[rgba(255,255,255,0.11)]">
@@ -194,6 +195,36 @@
       </div>
     </section>
 
+    <!-- Promotion Section -->
+    <section id="promotion" class="py-[90px] max-sm:py-[64px] border-t border-[rgba(255,255,255,0.05)]">
+      <div class="max-w-[1180px] mx-auto px-4 w-full">
+        <div class="flex justify-between items-end gap-6 mb-[34px] max-sm:block">
+          <div>
+            <div class="text-primary font-black uppercase tracking-[0.14em] text-[13px] mb-2">Ưu đãi đặc biệt</div>
+            <h2 class="text-[clamp(30px,4vw,48px)] leading-[1.08] tracking-[-0.04em] font-bold">Chương Trình Khuyến Mãi</h2>
+          </div>
+        </div>
+        <div class="promotion-container rounded-3xl overflow-hidden border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.02)] p-6 md:p-8 flex flex-col md:flex-row gap-8 items-center">
+          <div class="w-full md:w-1/2">
+            <img class="w-full h-auto object-cover rounded-2xl shadow-[0_15px_45px_rgba(255,106,0,0.25)] border border-[rgba(255,255,255,0.08)]" src="assets/menu-image/promotion.png" alt="Khuyến mãi Trạm Nướng Bất Ổn">
+          </div>
+          <div class="w-full md:w-1/2">
+            <span class="inline-block px-3 py-1.5 rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[13px] font-extrabold mb-4">ĐANG DIỄN RA</span>
+            <h3 class="text-2xl md:text-3xl font-bold mb-4">Giảm Ngay 10% Cho Tổng Hóa Đơn</h3>
+            <p class="text-[#dedede] mb-6 leading-relaxed">
+              Trạm Nướng Bất Ổn tưng bừng ưu đãi dành cho các thực thần! Giảm ngay 10% tổng hóa đơn thanh toán cho tất cả bàn đặt trước qua website hoặc hotline.
+            </p>
+            <ul class="space-y-3 mb-8 text-muted">
+              <li class="flex items-center gap-3"><span class="text-primary">✓</span> Áp dụng vào tất cả các ngày trong tuần (T2 - CN).</li>
+              <li class="flex items-center gap-3"><span class="text-primary">✓</span> Áp dụng cho cả menu gọi món và các combo nướng.</li>
+              <li class="flex items-center gap-3"><span class="text-primary">✓</span> Chỉ cần đặt bàn trước ít nhất 30 phút.</li>
+            </ul>
+            <a class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-6 rounded-full font-extrabold cursor-pointer transition duration-250 ease-in-out bg-gradient-to-br from-primary to-secondary text-[#120900] shadow-fire hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(255,106,0,0.5)]" href="#booking">Đặt bàn nhận ưu đãi ngay</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Menu Section -->
     <section id="menu" class="py-[90px] max-sm:py-[64px] border-t border-[rgba(255,255,255,0.05)]">
       <div class="max-w-[1180px] mx-auto px-4 w-full">
@@ -201,8 +232,9 @@
           <div>
             <div class="text-primary font-black uppercase tracking-[0.14em] text-[13px] mb-2">Menu nổi bật</div>
           </div>
-          <a class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.06)] text-white hover:border-primary hover:bg-[rgba(255,106,0,0.12)]"
-            href="#booking">Xem tất cả món</a>
+          <a id="btn-all-menu"
+            class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.06)] text-white hover:border-primary hover:bg-[rgba(255,106,0,0.12)]"
+            href="#">Xem tất cả món</a>
         </div>
 
         <div class="menu-grid grid grid-cols-4 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
@@ -538,8 +570,7 @@
       title="Chat Zalo">
       <span class="zalo-text">Zalo</span>
     </a>
-    <a href="https://m.me/p/Tr%E1%BA%A1m-N%C6%B0%E1%BB%9Bng-B%E1%BA%A5t-%E1%BB%94n-61568815303097/" target="_blank"
-      rel="noopener"
+    <a href="https://m.me/p/1093049677223821?locale=vi_VN" target="_blank" rel="noopener"
       class="w-14 h-14 max-sm:w-12 max-sm:h-12 rounded-full flex items-center justify-center text-white shadow-[0_8px_24px_rgba(0,0,0,0.25)] transition-all duration-300 [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)] cursor-pointer relative hover:-translate-y-1.25 hover:scale-[1.08] hover:shadow-[0_12px_30px_rgba(0,0,0,0.35)] bg-gradient-to-br from-[#00c6ff] to-[#0072ff]"
       title="Chat Messenger">
       <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
@@ -547,6 +578,232 @@
           d="M12 2C6.48 2 2 6.15 2 11.26c0 2.91 1.45 5.52 3.7 7.22V22l3.39-1.86c.88.25 1.82.38 2.78.38 5.52 0 10-4.15 10-9.26S17.52 2 12 2zm1.1 12.38l-2.45-2.61-4.78 2.61 5.26-5.58 2.49 2.61 4.74-2.61-5.26 5.58z" />
       </svg>
     </a>
+  </div>
+
+  <!-- Menu Popup Element -->
+  <div id="menu-popup" class="menu-popup">
+    <div class="menu-popup-content">
+      <div class="menu-popup-header">
+        <h3>Thực Đơn Đầy Đủ</h3>
+        <button class="menu-popup-close-x" aria-label="Đóng">&times;</button>
+      </div>
+      <div class="menu-popup-grid">
+        <!-- Item 1 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/ba-chi-heo-nuong.jpg"
+            alt="Ba chỉ nướng BBQ">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Best
+              seller</span>
+            <h3 class="text-[21px] mb-2 font-bold">Ba chỉ nướng BBQ</h3>
+            <p class="text-muted">Ba chỉ mềm, sốt đậm vị, nướng thơm trên than.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">89K</strong>
+            </div>
+          </div>
+        </article>
+        <!-- Item 2 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/bo-kobe.jpg" alt="Bò nướng sốt tiêu">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Recommended</span>
+            <h3 class="text-[21px] mb-2 font-bold">Bò nướng sốt tiêu</h3>
+            <p class="text-muted">Thịt bò mềm, sốt tiêu cay nhẹ, ăn kèm rau.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">119K</strong>
+            </div>
+          </div>
+        </article>
+        <!-- Item 3 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/mi-xao-hai-san.jpg" alt="Mì xào hải sản">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">New</span>
+            <h3 class="text-[21px] mb-2 font-bold">Mì xào hải sản</h3>
+            <p class="text-muted">Sợi mì dai ngon, mực tôm tươi rói, món ăn no phù hợp cho nhóm đông.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">149K</strong>
+            </div>
+          </div>
+        </article>
+        <!-- Item 4 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/4-mon.jpg" alt="Mẹt nướng tổng hợp">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Combo</span>
+            <h3 class="text-[21px] mb-2 font-bold">Mẹt nướng tổng hợp</h3>
+            <p class="text-muted">Nhiều loại thịt, rau ăn kèm, phù hợp 3-4 người ăn.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">199K</strong>
+            </div>
+          </div>
+        </article>
+        <!-- Item 5 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/canh-ga-chien-mam.jpg"
+            alt="Cánh gà chiên mắm">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Hot</span>
+            <h3 class="text-[21px] mb-2 font-bold">Cánh gà chiên mắm</h3>
+            <p class="text-muted">Cánh gà giòn chiên nước mắm kẹo kẹo đậm đà, hao bia cực kì.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">89K</strong>
+            </div>
+          </div>
+        </article>
+        <!-- Item 6 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/sun-ga-rang-muoi.jpg"
+            alt="Sụn gà rang muối">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Ăn
+              vặt</span>
+            <h3 class="text-[21px] mb-2 font-bold">Sụn gà rang muối</h3>
+            <p class="text-muted">Sụn gà giòn sần sật, rang muối đậm vị ăn kèm lá chanh thơm nức.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">99K</strong>
+            </div>
+          </div>
+        </article>
+        <!-- Item 7 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/sun-ga-chien-mam.jpg"
+            alt="Sụn gà chiên mắm">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Món
+              mới</span>
+            <h3 class="text-[21px] mb-2 font-bold">Sụn gà chiên mắm</h3>
+            <p class="text-muted">Sụn gà chiên mắm cay ngọt đậm đà vị đưa mồi.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">89K</strong>
+            </div>
+          </div>
+        </article>
+        <!-- Item 8 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/goi-bo-keo-phao.jpg" alt="Gỏi bò kéo pháo">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Khai
+              vị</span>
+            <h3 class="text-[21px] mb-2 font-bold">Gỏi bò kéo pháo</h3>
+            <p class="text-muted">Thịt bò mềm trộn thấu hoa chuối, pháo giòn chua ngọt, hành phi.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">109K</strong>
+            </div>
+          </div>
+        </article>
+        <!-- Item 9 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/vu-heo-nuong.jpg" alt="Vú heo nướng chao">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Đặc
+              sản</span>
+            <h3 class="text-[21px] mb-2 font-bold">Vú heo nướng chao</h3>
+            <p class="text-muted">Vú heo ướp chao đỏ nướng sém giòn, ăn kèm đậu bắp chấm sốt.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">119K</strong>
+            </div>
+          </div>
+        </article>
+        <!-- Item 10 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/ba-chi-heo.jpg" alt="Ba chỉ heo tươi">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Tươi
+              ngon</span>
+            <h3 class="text-[21px] mb-2 font-bold">Ba chỉ heo tươi</h3>
+            <p class="text-muted">Thịt ba chỉ heo tươi thái lát bản dày, chuẩn vị tự nướng.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">89K</strong>
+            </div>
+          </div>
+        </article>
+        <!-- Item 11 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/vu-heo.jpg" alt="Vú heo tươi">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Tươi
+              ngon</span>
+            <h3 class="text-[21px] mb-2 font-bold">Vú heo tươi</h3>
+            <p class="text-muted">Vú heo tươi giòn sần sật thái lát vừa ăn.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">119K</strong>
+            </div>
+          </div>
+        </article>
+        <!-- Item 12 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/combo-1.jpg" alt="Combo Hẹn Hò">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Combo</span>
+            <h3 class="text-[21px] mb-2 font-bold">Combo Hẹn Hò</h3>
+            <p class="text-muted">Combo nướng lý tưởng dành cho 2 người tụ tập ăn nhẹ.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">199K</strong>
+            </div>
+          </div>
+        </article>
+        <!-- Item 13 -->
+        <article
+          class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
+          <img class="h-[190px] w-full object-cover" src="assets/menu-image/combo-2.jpg" alt="Combo Bất Ổn">
+          <div class="p-[18px]">
+            <span
+              class="inline-block px-2 py-[5px] rounded-full bg-[rgba(255,106,0,0.16)] text-secondary text-[12px] font-extrabold mb-2">Combo</span>
+            <h3 class="text-[21px] mb-2 font-bold">Combo Bất Ổn</h3>
+            <p class="text-muted">Combo Best Seller cho nhóm 4 người ăn no nê.</p>
+            <div class="flex justify-between items-center mt-3.5">
+              <strong class="text-secondary font-[950] text-[22px]">299K</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="menu-popup-footer">
+        <button class="menu-popup-btn-close btn btn-outline">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Promotion Popup Element -->
+  <div id="promo-popup" class="menu-popup">
+    <div class="menu-popup-content max-w-[500px] rounded-[28px] overflow-hidden relative">
+      <button id="promo-popup-close-x" class="menu-popup-close-x absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-[rgba(0,0,0,0.6)] border border-[rgba(255,255,255,0.15)] flex items-center justify-center text-white text-[20px] hover:text-primary hover:rotate-90 transition duration-250" aria-label="Đóng">&times;</button>
+      <div class="relative">
+        <img class="w-full h-auto object-cover" src="assets/menu-image/promotion.png" alt="Khuyến mãi đặc biệt">
+        <div class="p-6 text-center bg-[#1a1a1a] border-t border-[rgba(255,255,255,0.05)]">
+          <h3 class="text-2xl font-bold mb-2">Ưu Đãi Hôm Nay</h3>
+          <p class="text-muted text-[14px] mb-5">Đặt bàn trước để nhận ngay ưu đãi giảm 10% tổng hóa đơn.</p>
+          <div class="flex gap-3 justify-center">
+            <a id="promo-btn-book" class="btn inline-flex items-center justify-center gap-2 min-h-[44px] px-5 rounded-full font-extrabold cursor-pointer transition duration-250 bg-gradient-to-br from-primary to-secondary text-[#120900] shadow-fire hover:-translate-y-0.5 hover:scale-[1.02]" href="#booking">Nhận ưu đãi</a>
+            <button id="promo-popup-btn-close" class="btn btn-outline min-h-[44px] px-5 rounded-full font-extrabold text-white border border-[rgba(255,255,255,0.15)] hover:border-primary">Để sau</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Lightbox Element -->
