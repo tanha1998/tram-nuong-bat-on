@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tanha1998.github.io/tram-nuong-bat-on/sitemap.xml
