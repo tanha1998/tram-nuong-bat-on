@@ -79,7 +79,7 @@
   <meta name="twitter:image" content="https://tramnuongbaton.run.place/assets/restaurant-space/background-baner.jpg" />
 
   <!-- Custom CSS assets -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style.css?v=1.0.3" />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -140,20 +140,20 @@
       <a class="flex items-center gap-3 font-[950] tracking-[-0.03em] text-xl" href="#">
         <span
           class="w-[42px] h-[42px] grid place-items-center rounded-md bg-gradient-to-br from-[#ff6a00] to-[#ffc247] text-[#1a0b00] shadow-fire text-[22px]">🔥</span>
-        <span>Trạm Nướng<br />Bất Ổn</span>
+        <span id="header-restaurant-name">Trạm Nướng<br />Bất Ổn</span>
       </a>
 
       <nav class="nav-links flex items-center gap-[28px] text-muted font-bold text-[14px] max-[980px]:hidden">
-        <a href="#promotion" class="hover:text-secondary">Khuyến mãi</a>
-        <a href="#menu" class="hover:text-secondary">Menu</a>
-        <a href="#combo" class="hover:text-secondary">Combo</a>
-        <a href="#gallery" class="hover:text-secondary">Không gian</a>
-        <a href="#booking" class="hover:text-secondary">Đặt bàn</a>
-        <a href="#map" class="hover:text-secondary">Chỉ đường</a>
+        <a href="#promotion" data-nav="promotion" class="hover:text-secondary">Khuyến mãi</a>
+        <a href="#menu" data-nav="menu" class="hover:text-secondary">Menu</a>
+        <a href="#combo" data-nav="combo" class="hover:text-secondary">Combo</a>
+        <a href="#gallery" data-nav="gallery" class="hover:text-secondary">Không gian</a>
+        <a href="#booking" data-nav="booking" class="hover:text-secondary">Đặt bàn</a>
+        <a href="#map" data-nav="map" class="hover:text-secondary">Chỉ đường</a>
       </nav>
 
       <a class="desktop-cta inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap bg-gradient-to-br from-primary to-secondary text-[#120900] shadow-fire hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(255,106,0,0.5)] max-[980px]:hidden"
-        href="#booking">Đặt bàn ngay</a>
+        data-nav="booking" href="#booking">Đặt bàn ngay</a>
       <div class="mobile-menu hidden max-[980px]:block text-[28px] cursor-pointer">☰</div>
     </div>
   </header>
@@ -165,12 +165,15 @@
       <div
         class="max-w-[1180px] mx-auto px-4 w-full grid grid-cols-[1.05fr_0.95fr] max-[980px]:grid-cols-1 gap-[50px] items-center">
         <div>
-          <span
+          <span id="hero-tagline"
             class="inline-flex items-center gap-2 px-3.5 py-2 border border-[rgba(255,194,71,0.35)] bg-[rgba(255,106,0,0.12)] text-secondary rounded-full text-[13px] font-bold">🔥
             BBQ • Đồ nướng • Tụ tập bạn bè</span>
-          <h1 class="mt-5 text-[clamp(44px,7vw,86px)] max-sm:text-[52px] leading-[1.2] tracking-[-0.075em] font-bold">
-            Trạm Nướng <span class="text-secondary [text-shadow:0_0_32px_rgba(255,106,0,0.4)]">Bất Ổn</span></h1>
-          <p class="mt-[22px] text-[#dedede] text-[19px] max-sm:text-[16px] max-w-[620px]">
+          <h1 id="hero-title"
+            class="mt-5 text-[clamp(44px,7vw,86px)] max-sm:text-[52px] leading-[1.2] tracking-[-0.075em] font-bold">
+            <span id="hero-title-prefix">Trạm Nướng </span><span id="hero-title-highlight"
+              class="text-secondary [text-shadow:0_0_32px_rgba(255,106,0,0.4)]">Bất Ổn</span>
+          </h1>
+          <p id="hero-description" class="mt-[22px] text-[#dedede] text-[19px] max-sm:text-[16px] max-w-[620px]">
             Trạm dừng chân cho team mê đồ nướng: combo nhóm, món nướng nóng hổi,
             không gian thoải mái cho ăn tối, sinh nhật và những buổi tụ tập cuối tuần.
           </p>
@@ -179,12 +182,13 @@
             <a class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap bg-gradient-to-br from-primary to-secondary text-[#120900] shadow-fire hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(255,106,0,0.5)]"
               href="#menu">Xem menu</a>
             <a class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.06)] text-white hover:border-primary hover:bg-[rgba(255,106,0,0.12)]"
-              href="#booking">Đặt bàn</a>
+              data-nav="booking" href="#booking">Đặt bàn</a>
             <a class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.06)] text-white hover:border-primary hover:bg-[rgba(255,106,0,0.12)]"
               href="#map">Chỉ đường</a>
           </div>
 
-          <div class="hero-stats grid grid-cols-3 max-sm:grid-cols-1 gap-3.5 mt-[44px] max-w-[620px]">
+          <div id="hero-stats-container"
+            class="hero-stats grid grid-cols-3 max-sm:grid-cols-1 gap-3.5 mt-[44px] max-w-[620px]">
             <div class="stat-card p-5 rounded-lg bg-[rgba(255,255,255,0.07)] border border-[rgba(255,255,255,0.11)]">
               <strong class="block text-[27px] text-secondary leading-none font-bold">5.0★</strong>
               <span class="text-muted text-[13px]">Đánh giá khách hàng</span>
@@ -200,16 +204,16 @@
           </div>
         </div>
 
-        <div
+        <div id="hero-featured-card"
           class="hero-card p-5 rounded-[34px] bg-[rgba(26,26,26,0.68)] border border-[rgba(255,255,255,0.12)] backdrop-blur-md shadow-[0_30px_80px_rgba(0,0,0,0.35)] max-[980px]:hidden">
-          <img class="h-[360px] w-full object-cover rounded-[26px]" src="assets/menu-image/combo-2.jpg"
-            alt="Combo nướng tại Trạm Nướng Bất Ổn">
+          <img id="hero-featured-img" class="h-[360px] w-full object-cover rounded-[26px]"
+            src="assets/menu-image/combo-2.jpg" alt="Combo nướng tại Trạm Nướng Bất Ổn">
           <div class="hero-card-info flex justify-between gap-[18px] pt-[18px] px-1.5 pb-1">
             <div>
-              <h3 class="text-[22px] font-bold">Combo Nướng Bất Ổn</h3>
-              <p class="text-muted">Best seller cho nhóm 4 người</p>
+              <h3 id="hero-featured-title" class="text-[22px] font-bold">Combo Nướng Bất Ổn</h3>
+              <p id="hero-featured-desc" class="text-muted">Best seller cho nhóm 4 người</p>
             </div>
-            <div class="price text-secondary font-[950] text-[22px]">299K</div>
+            <div id="hero-featured-price" class="price text-secondary font-[950] text-[22px]">299K</div>
           </div>
         </div>
       </div>
@@ -229,7 +233,7 @@
             Maps chỉ trong vài chạm.</p> -->
         </div>
 
-        <div class="feature-grid grid grid-cols-4 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
+        <div id="features-grid" class="feature-grid grid grid-cols-4 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
           <div
             class="feature-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-6">
             <div class="text-[32px] mb-[18px]">🥩</div>
@@ -268,7 +272,7 @@
             </h2>
           </div>
         </div>
-        <div
+        <div id="promo-section"
           class="promotion-container rounded-3xl overflow-hidden border border-[rgba(255,255,255,0.1)] bg-[rgba(255,255,255,0.02)] p-6 md:p-8 flex flex-col md:flex-row gap-8 items-center">
           <div class="w-full md:w-1/2">
             <img
@@ -312,7 +316,7 @@
             href="#">Xem tất cả món</a>
         </div>
 
-        <div class="menu-grid grid grid-cols-4 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
+        <div id="menu-grid" class="menu-grid grid grid-cols-4 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
           <article
             class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
             <img class="h-[190px] w-full object-cover" src="assets/menu-image/ba-chi-heo-nuong.jpg"
@@ -386,7 +390,7 @@
           </div>
         </div>
 
-        <div class="combo-grid grid grid-cols-3 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
+        <div id="combo-grid" class="combo-grid grid grid-cols-3 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
           <article
             class="combo-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-6 relative">
             <span
@@ -446,7 +450,8 @@
           </div>
         </div>
 
-        <div class="gallery-grid grid grid-cols-[1.2fr_0.8fr_0.8fr] max-[980px]:grid-cols-1 gap-[18px]">
+        <div id="gallery-grid"
+          class="gallery-grid grid grid-cols-[1.2fr_0.8fr_0.8fr] max-[980px]:grid-cols-1 gap-[18px]">
           <div
             class="gallery-item group relative rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] cursor-pointer row-span-2 min-h-[520px] max-[980px]:min-h-[320px]"
             data-category="khong-gian">
@@ -502,7 +507,7 @@
     </section>
 
     <!-- Reviews Section -->
-    <section class="py-[90px] max-sm:py-[64px] border-t border-[rgba(255,255,255,0.05)]">
+    <section id="reviews" class="py-[90px] max-sm:py-[64px] border-t border-[rgba(255,255,255,0.05)]">
       <div class="max-w-[1180px] mx-auto px-4 w-full">
         <div class="flex justify-between items-end gap-6 mb-[34px] max-sm:block">
           <div>
@@ -510,7 +515,7 @@
           </div>
         </div>
 
-        <div class="review-grid grid grid-cols-3 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
+        <div id="reviews-grid" class="review-grid grid grid-cols-3 max-[980px]:grid-cols-2 max-sm:grid-cols-1 gap-5">
           <article
             class="review-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-6">
             <div class="text-secondary tracking-[3px] mb-3.5">★★★★★</div>
@@ -543,7 +548,7 @@
     <section id="booking" class="py-[90px] max-sm:py-[64px] border-t border-[rgba(255,255,255,0.05)]">
       <div class="max-w-[1180px] mx-auto px-4 w-full">
         <div class="grid grid-cols-[0.9fr_1.1fr] max-[980px]:grid-cols-1 gap-6 items-stretch">
-          <div
+          <div id="booking-panel"
             class="booking-panel bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-[28px]">
             <h2 class="text-primary font-black uppercase tracking-[0.14em] text-[13px] mb-2">Đặt bàn</h2>
             <form class="grid gap-3.5 mt-[22px]">
@@ -581,15 +586,17 @@
             class="map-panel bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden p-[28px]">
             <h2 class="text-primary font-black uppercase tracking-[0.14em] text-[13px] mb-2">Chỉ đường</h2>
 
-            <div class="mt-5 h-[360px] rounded-[22px] overflow-hidden border border-[rgba(255,255,255,0.12)]">
-              <iframe
+            <div id="map-iframe-container"
+              class="mt-5 h-[360px] rounded-[22px] overflow-hidden border border-[rgba(255,255,255,0.12)]">
+              <iframe id="map-iframe"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.067347901041!2d106.6524712!3d10.9838959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1006e4ec663%3A0x957c37f6840761de!2zVHLhuqFtIE7GsOG7m25nIELhuqV0IOG7lG4!5e0!3m2!1svi!2s!4v1717586200000!5m2!1svi!2s"
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
               </iframe>
             </div>
             <div class="mt-5 flex justify-center">
-              <a class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap bg-gradient-to-br from-primary to-secondary text-[#120900] shadow-fire hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(255,106,0,0.5)]"
+              <a id="map-btn"
+                class="btn inline-flex items-center justify-center gap-2.5 min-h-[48px] px-[22px] rounded-full font-extrabold border border-transparent cursor-pointer transition duration-250 ease-in-out whitespace-nowrap bg-gradient-to-br from-primary to-secondary text-[#120900] shadow-fire hover:-translate-y-0.5 hover:scale-[1.02] hover:shadow-[0_0_45px_rgba(255,106,0,0.5)]"
                 href="https://www.google.com/maps/place/Tr%E1%BA%A1m+N%C6%B0%E1%BB%9Bng+B%E1%BA%A5t+%E1%BB%94n/@10.9838959,106.6546599,17z/data=!3m1!4b1!4m6!3m5!1s0x3174d1006e4ec663:0x957c37f6840761de!8m2!3d10.9838959!4d106.6546599!16s%2Fg%2F11z9vvyynw"
                 target="_blank" rel="noopener">
                 📍 Chỉ đường trên Google Maps
@@ -608,52 +615,56 @@
         <a class="flex items-center gap-3 font-[950] tracking-[-0.03em] text-xl text-white" href="#">
           <span
             class="w-[42px] h-[42px] grid place-items-center rounded-md bg-gradient-to-br from-[#ff6a00] to-[#ffc247] text-[#1a0b00] shadow-fire text-[22px]">🔥</span>
-          <span>Trạm Nướng<br />Bất Ổn</span>
+          <span id="footer-restaurant-name">Trạm Nướng<br />Bất Ổn</span>
         </a>
-        <p class="mt-2.5">Quán nướng trẻ trung, phù hợp tụ tập bạn bè, ăn tối và sinh nhật tại khu vực Thủ Dầu Một -
+        <p id="footer-restaurant-desc" class="mt-2.5">Quán nướng trẻ trung, phù hợp tụ tập bạn bè, ăn tối và sinh nhật
+          tại khu vực Thủ Dầu Một -
           Bình
           Dương.</p>
       </div>
       <div>
         <h3 class="text-white font-bold mb-2">Menu</h3>
-        <a href="#menu" class="block mt-2.5 hover:text-secondary">Món nổi bật</a>
-        <a href="#combo" class="block mt-2.5 hover:text-secondary">Combo</a>
-        <a href="#gallery" class="block mt-2.5 hover:text-secondary">Không gian</a>
+        <a href="#menu" data-nav="menu" class="block mt-2.5 hover:text-secondary">Món nổi bật</a>
+        <a href="#combo" data-nav="combo" class="block mt-2.5 hover:text-secondary">Combo</a>
+        <a href="#gallery" data-nav="gallery" class="block mt-2.5 hover:text-secondary">Không gian</a>
       </div>
-      <div>
-        <!-- Mockup hiển thị combo rõ ràng để sau này nối API động từ backend hoặc CMS. -->
+      <div id="footer-contact-info">
         <h3 class="text-white font-bold mb-2">Liên hệ</h3>
-        <a href="tel:0352412123" class="block mt-2.5 hover:text-secondary">Hotline: 0352412123</a>
-        <a href="https://www.facebook.com/p/Tr%E1%BA%A1m-N%C6%B0%E1%BB%9Bng-B%E1%BA%A5t-%E1%BB%94n-61568815303097/"
+        <a id="footer-hotline" href="tel:0352412123" class="block mt-2.5 hover:text-secondary">Hotline: 0352412123</a>
+        <a id="footer-facebook"
+          href="https://www.facebook.com/p/Tr%E1%BA%A1m-N%C6%B0%E1%BB%9Bng-B%E1%BA%A5t-%E1%BB%94n-61568815303097/"
           target="_blank" rel="noopener" class="block mt-2.5 hover:text-secondary">Facebook</a>
-        <a href="#map" class="block mt-2.5 hover:text-secondary">Google Maps</a>
+        <a href="#map" data-nav="map" class="block mt-2.5 hover:text-secondary">Google Maps</a>
       </div>
-      <div>
+      <div id="footer-opening-hours">
         <h3 class="text-white font-bold mb-2">Giờ mở cửa</h3>
-        <p class="mt-2.5">Thứ 2 - Chủ nhật</p>
-        <p class="mt-2.5">16:00 - 23:00</p>
+        <p id="footer-opening-days" class="mt-2.5">Thứ 2 - Chủ nhật</p>
+        <p id="footer-opening-time" class="mt-2.5">16:00 - 23:00</p>
       </div>
     </div>
   </footer>
 
-  <nav
+  <nav id="mobile-nav"
     class="hidden max-sm:grid fixed z-[80] left-3 right-3 bottom-3 grid-cols-3 gap-2 p-2.5 rounded-[22px] bg-[rgba(17,17,17,0.88)] backdrop-blur-[18px] border border-[rgba(255,255,255,0.12)]">
-    <a class="grid place-items-center min-h-[48px] rounded-md bg-[rgba(255,255,255,0.08)] text-[13px] font-black text-white"
+    <a id="mobile-nav-call"
+      class="grid place-items-center min-h-[48px] rounded-md bg-[rgba(255,255,255,0.08)] text-[13px] font-black text-white"
       href="tel:0352412123">Gọi</a>
-    <a class="grid place-items-center min-h-[48px] rounded-md bg-gradient-to-br from-primary to-secondary text-[#170900] text-[13px] font-black"
+    <a id="mobile-nav-booking" data-nav="booking"
+      class="grid place-items-center min-h-[48px] rounded-md bg-gradient-to-br from-primary to-secondary text-[#170900] text-[13px] font-black"
       href="#booking">Đặt bàn</a>
-    <a class="grid place-items-center min-h-[48px] rounded-md bg-[rgba(255,255,255,0.08)] text-[13px] font-black text-white"
+    <a id="mobile-nav-map" data-nav="map"
+      class="grid place-items-center min-h-[48px] rounded-md bg-[rgba(255,255,255,0.08)] text-[13px] font-black text-white"
       href="#map">Chỉ đường</a>
   </nav>
 
   <!-- Floating Contact Buttons -->
   <div class="fixed right-6 bottom-6 max-sm:bottom-[96px] max-sm:right-4 z-[999] flex flex-col gap-3">
-    <a href="https://zalo.me/0352412123" target="_blank" rel="noopener"
+    <a id="zalo-link" href="https://zalo.me/0352412123" target="_blank" rel="noopener"
       class="w-14 h-14 max-sm:w-12 max-sm:h-12 rounded-full flex items-center justify-center text-white shadow-[0_8px_24px_rgba(0,0,0,0.25)] transition-all duration-300 [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)] cursor-pointer relative hover:-translate-y-1.25 hover:scale-[1.08] hover:shadow-[0_12px_30px_rgba(0,0,0,0.35)] bg-[#0068ff] [&>.zalo-text]:text-base [&>.zalo-text]:font-black [&>.zalo-text]:font-[Arial,sans-serif] [&>.zalo-text]:italic [&>.zalo-text]:tracking-[-1px]"
       title="Chat Zalo" aria-label="Chat Zalo với Trạm Nướng Bất Ổn">
       <span class="zalo-text">Zalo</span>
     </a>
-    <a href="https://m.me/p/1093049677223821?locale=vi_VN" target="_blank" rel="noopener"
+    <a id="messenger-link" href="https://m.me/p/1093049677223821?locale=vi_VN" target="_blank" rel="noopener"
       class="w-14 h-14 max-sm:w-12 max-sm:h-12 rounded-full flex items-center justify-center text-white shadow-[0_8px_24px_rgba(0,0,0,0.25)] transition-all duration-300 [transition-timing-function:cubic-bezier(0.175,0.885,0.32,1.275)] cursor-pointer relative hover:-translate-y-1.25 hover:scale-[1.08] hover:shadow-[0_12px_30px_rgba(0,0,0,0.35)] bg-gradient-to-br from-[#00c6ff] to-[#0072ff]"
       title="Chat Messenger" aria-label="Chat Facebook Messenger với Trạm Nướng Bất Ổn">
       <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
@@ -670,7 +681,7 @@
         <h3>Thực Đơn Đầy Đủ</h3>
         <button class="menu-popup-close-x" aria-label="Đóng">&times;</button>
       </div>
-      <div class="menu-popup-grid">
+      <div id="popup-menu-grid" class="menu-popup-grid">
         <!-- Item 1 -->
         <article
           class="menu-card bg-gradient-to-b from-[rgba(255,255,255,0.075)] to-[rgba(255,255,255,0.035)] border border-[rgba(255,255,255,0.1)] rounded-xl overflow-hidden transition-all duration-250 ease-in-out hover:-translate-y-[7px] hover:border-[rgba(255,106,0,0.42)] hover:shadow-[0_18px_60px_rgba(0,0,0,0.3)]">
@@ -885,7 +896,7 @@
           <div class="flex gap-3 justify-center">
             <a id="promo-btn-book"
               class="btn inline-flex items-center justify-center gap-2 min-h-[44px] px-5 rounded-full font-extrabold cursor-pointer transition duration-250 bg-gradient-to-br from-primary to-secondary text-[#120900] shadow-fire hover:-translate-y-0.5 hover:scale-[1.02]"
-              href="#booking">Nhận ưu đãi</a>
+              data-nav="booking" href="#booking">Nhận ưu đãi</a>
             <button id="promo-popup-btn-close"
               class="btn btn-outline min-h-[44px] px-5 rounded-full font-extrabold text-white border border-[rgba(255,255,255,0.15)] hover:border-primary">Để
               sau</button>

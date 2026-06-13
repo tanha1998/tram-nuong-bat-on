@@ -1,0 +1,347 @@
+{
+  "restaurant": {
+    "name": "Trạm Nướng Bất Ổn",
+    "shortName": "Trạm Nướng\nBất Ổn",
+    "telephone": "0352412123",
+    "telephoneDisplay": "0352412123",
+    "address": "52 Đ. Phạm Ngũ Lão, Thủ Dầu Một",
+    "addressRegion": "Bình Dương",
+    "addressCountry": "VN",
+    "postalCode": "820000",
+    "openingDays": "Thứ 2 - Chủ nhật",
+    "openingHours": "16:00 - 23:00",
+    "priceRange": "100.000 - 300.000 VNĐ",
+    "googleMapsUrl": "https://www.google.com/maps/place/Tr%E1%BA%A1m+N%C6%B0%E1%BB%9Bng+B%E1%BA%A5t+%E1%BB%94n/@10.9838959,106.6546599,17z/data=!3m1!4b1!4m6!3m5!1s0x3174d1006e4ec663:0x957c37f6840761de!8m2!3d10.9838959!4d106.6546599!16s%2Fg%2F11z9vvyynw",
+    "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.067347901041!2d106.6524712!3d10.9838959!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d1006e4ec663%3A0x957c37f6840761de!2zVHLhuqFtIE7GsOG7m25nIELhuqV0IOG7lG4!5e0!3m2!1svi!2s!4v1717586200000!5m2!1svi!2s",
+    "latitude": 10.9838959,
+    "longitude": 106.6546599,
+    "facebookUrl": "https://www.facebook.com/p/Tr%E1%BA%A1m-N%C6%B0%E1%BB%9Bng-B%E1%BA%A5t-%E1%BB%94n-61568815303097/",
+    "zaloUrl": "https://zalo.me/0352412123",
+    "messengerUrl": "https://m.me/p/1093049677223821?locale=vi_VN"
+  },
+  "metadata": {
+    "title": "Trạm Nướng Bất Ổn | Quán Nướng Ngon Tại Thủ Dầu Một, Bình Dương",
+    "description": "Trạm Nướng Bất Ổn - Quán nướng ngói, lẩu & BBQ cực ngon tại Thủ Dầu Một, Bình Dương. Không gian thoáng đãng, nhạc trẻ trung, địa điểm lý tưởng để tụ tập bạn bè và đặt tiệc sinh nhật.",
+    "keywords": "Trạm Nướng Bất Ổn, quán nướng Thủ Dầu Một, quán nướng Bình Dương, BBQ Thủ Dầu Một, đồ nướng Bình Dương, ăn tối Thủ Dầu Một, sinh nhật Thủ Dầu Một",
+    "ogImage": "https://tramnuongbaton.run.place/assets/restaurant-space/background-baner.jpg",
+    "canonical": "https://tramnuongbaton.run.place/"
+  },
+  "sectionsVisibility": {
+    "promotion": true,
+    "menu": true,
+    "combo": true,
+    "gallery": true,
+    "reviews": true,
+    "booking": false,
+    "map": true
+  },
+  "hero": {
+    "tagline": "🔥 BBQ • Đồ nướng • Tụ tập bạn bè",
+    "titlePrefix": "Trạm Nướng ",
+    "titleHighlight": "Bất Ổn",
+    "description": "Trạm dừng chân cho team mê đồ nướng: combo nhóm, món nướng nóng hổi, không gian thoải mái cho ăn tối, sinh nhật và những buổi tụ tập cuối tuần.",
+    "stats": [
+      {
+        "value": "5.0★",
+        "label": "Đánh giá khách hàng"
+      },
+      {
+        "value": "20+",
+        "label": "Món nướng & combo"
+      },
+      {
+        "value": "2-10",
+        "label": "Phù hợp nhóm bạn"
+      }
+    ],
+    "featuredCard": {
+      "img": "assets/menu-image/combo-2.jpg",
+      "title": "Combo Nướng Bất Ổn",
+      "subtitle": "Best seller cho nhóm 4 người",
+      "price": "299K"
+    }
+  },
+  "features": [
+    {
+      "icon": "🥩",
+      "title": "Đồ nướng nóng tại bàn",
+      "desc": "Món nướng thơm, hợp khẩu vị đi nhóm và ăn tối."
+    },
+    {
+      "icon": "🍻",
+      "title": "Hợp tụ tập",
+      "desc": "Không gian trẻ trung cho bạn bè, sinh nhật, cuối tuần."
+    },
+    {
+      "icon": "💸",
+      "title": "Combo dễ chọn",
+      "desc": "Combo 2 người, 4 người và nhóm đông, giá rõ ràng."
+    },
+    {
+      "icon": "📍",
+      "title": "Dễ tìm đường",
+      "desc": "Tích hợp Google Maps, CTA chỉ đường nổi bật trên mobile."
+    }
+  ],
+  "promotion": {
+    "isActive": true,
+    "bannerImg": "assets/menu-image/promotion.png",
+    "tag": "ĐANG DIỄN RA",
+    "title": "Giảm Ngay 10% Cho Tổng Hóa Đơn",
+    "description": "Trạm Nướng Bất Ổn tưng bừng ưu đãi dành cho các thực thần! Giảm ngay 10% tổng hóa đơn thanh toán cho tất cả bàn đặt trước qua website hoặc hotline.",
+    "details": [
+      "Áp dụng vào tất cả các ngày trong tuần (T2 - CN).",
+      "Áp dụng cho cả menu gọi món và các combo nướng.",
+      "Chỉ cần đặt bàn trước ít nhất 30 phút."
+    ],
+    "btnText": "Đặt bàn nhận ưu đãi ngay"
+  },
+  "menuItems": [
+    {
+      "id": 1,
+      "img": "assets/menu-image/ba-chi-heo-nuong.jpg",
+      "tag": "Best seller",
+      "title": "Ba chỉ nướng BBQ",
+      "desc": "Ba chỉ mềm, sốt đậm vị, nướng thơm trên than.",
+      "price": "89K",
+      "isFeatured": true
+    },
+    {
+      "id": 2,
+      "img": "assets/menu-image/bo-kobe.jpg",
+      "tag": "Recommended",
+      "title": "Bò nướng sốt tiêu",
+      "desc": "Thịt bò mềm, sốt tiêu cay nhẹ, ăn kèm rau.",
+      "price": "119K",
+      "isFeatured": true
+    },
+    {
+      "id": 3,
+      "img": "assets/menu-image/mi-xao-hai-san.jpg",
+      "tag": "New",
+      "title": "Mì xào hải sản",
+      "desc": "Sợi mì dai ngon, mực tôm tươi rói, món ăn no phù hợp cho nhóm đông.",
+      "price": "149K",
+      "isFeatured": true
+    },
+    {
+      "id": 4,
+      "img": "assets/menu-image/4-mon.jpg",
+      "tag": "Combo",
+      "title": "Mẹt nướng tổng hợp",
+      "desc": "Nhiều loại thịt, rau ăn kèm, phù hợp 3-4 người ăn.",
+      "price": "199K",
+      "isFeatured": true
+    },
+    {
+      "id": 5,
+      "img": "assets/menu-image/canh-ga-chien-mam.jpg",
+      "tag": "Hot",
+      "title": "Cánh gà chiên mắm",
+      "desc": "Cánh gà giòn chiên nước mắm kẹo kẹo đậm đà, hao bia cực kì.",
+      "price": "89K",
+      "isFeatured": false
+    },
+    {
+      "id": 6,
+      "img": "assets/menu-image/sun-ga-rang-muoi.jpg",
+      "tag": "Ăn vặt",
+      "title": "Sụn gà rang muối",
+      "desc": "Sụn gà giòn sần sật, rang muối đậm vị ăn kèm lá chanh thơm nức.",
+      "price": "99K",
+      "isFeatured": false
+    },
+    {
+      "id": 7,
+      "img": "assets/menu-image/sun-ga-chien-mam.jpg",
+      "tag": "Món mới",
+      "title": "Sụn gà chiên mắm",
+      "desc": "Sụn gà chiên mắm cay ngọt đậm đà vị đưa mồi.",
+      "price": "89K",
+      "isFeatured": false
+    },
+    {
+      "id": 8,
+      "img": "assets/menu-image/goi-bo-keo-phao.jpg",
+      "tag": "Khai vị",
+      "title": "Gỏi bò kéo pháo",
+      "desc": "Thịt bò mềm trộn thấu hoa chuối, pháo giòn chua ngọt, hành phi.",
+      "price": "109K",
+      "isFeatured": false
+    },
+    {
+      "id": 9,
+      "img": "assets/menu-image/vu-heo-nuong.jpg",
+      "tag": "Đặc sản",
+      "title": "Vú heo nướng chao",
+      "desc": "Vú heo ướp chao đỏ nướng sém giòn, ăn kèm đậu bắp chấm sốt.",
+      "price": "119K",
+      "isFeatured": false
+    },
+    {
+      "id": 10,
+      "img": "assets/menu-image/ba-chi-heo.jpg",
+      "tag": "Tươi ngon",
+      "title": "Ba chỉ heo tươi",
+      "desc": "Thịt ba chỉ heo tươi thái lát bản dày, chuẩn vị tự nướng.",
+      "price": "89K",
+      "isFeatured": false
+    },
+    {
+      "id": 11,
+      "img": "assets/menu-image/vu-heo.jpg",
+      "tag": "Tươi ngon",
+      "title": "Vú heo tươi",
+      "desc": "Vú heo tươi giòn sần sật thái lát vừa ăn.",
+      "price": "119K",
+      "isFeatured": false
+    },
+    {
+      "id": 12,
+      "img": "assets/menu-image/combo-1.jpg",
+      "tag": "Combo",
+      "title": "Combo Hẹn Hò",
+      "desc": "Combo nướng lý tưởng dành cho 2 người tụ tập ăn nhẹ.",
+      "price": "199K",
+      "isFeatured": false
+    },
+    {
+      "id": 13,
+      "img": "assets/menu-image/combo-2.jpg",
+      "tag": "Combo",
+      "title": "Combo Bất Ổn",
+      "desc": "Combo Best Seller cho nhóm 4 người ăn no nê.",
+      "price": "299K",
+      "isFeatured": false
+    }
+  ],
+  "combos": [
+    {
+      "tag": "2 người",
+      "title": "Combo Hẹn Hò",
+      "desc": "Phù hợp 2 người ăn tối nhẹ.",
+      "items": [
+        "🔥 Ba chỉ nướng",
+        "🔥 Bò sốt tiêu",
+        "🔥 Rau + kim chi",
+        "🔥 2 nước ngọt"
+      ],
+      "price": "199K"
+    },
+    {
+      "tag": "Best choice",
+      "title": "Combo Bất Ổn",
+      "desc": "Phù hợp nhóm 4 người, gọi nhanh, ăn no.",
+      "items": [
+        "🔥 Mẹt thịt tổng hợp",
+        "🔥 Hải sản nướng",
+        "🔥 Món ăn kèm",
+        "🔥 4 nước ngọt"
+      ],
+      "price": "399K",
+      "isFeatured": true
+    },
+    {
+      "tag": "Party",
+      "title": "Combo Tụ Tập",
+      "desc": "Phù hợp sinh nhật, nhóm đông cuối tuần.",
+      "items": [
+        "🔥 2 mẹt nướng lớn",
+        "🔥 Hải sản + bò",
+        "🔥 Khoai / salad",
+        "🔥 Ưu đãi nước"
+      ],
+      "price": "699K"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "khong-gian",
+      "tagText": "Không gian tụ tập",
+      "title": "Không gian tụ tập",
+      "featuredImg": "assets/restaurant-space/khong-gian-quan.jpg",
+      "images": [
+        "assets/restaurant-space/khong-gian-quan.jpg",
+        "assets/restaurant-space/khong-gian-quan-1.jpg",
+        "assets/restaurant-space/background-baner.jpg"
+      ],
+      "gridClass": "gallery-item group relative rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] cursor-pointer row-span-2 min-h-[520px] max-[980px]:min-h-[320px]"
+    },
+    {
+      "id": "mon-nuong",
+      "tagText": "Món nướng",
+      "title": "Món nướng hấp dẫn",
+      "featuredImg": "assets/menu-image/vu-heo-nuong.jpg",
+      "images": [
+        "assets/menu-image/vu-heo-nuong.jpg",
+        "assets/menu-image/ba-chi-heo-nuong.jpg",
+        "assets/menu-image/bo-kobe.jpg",
+        "assets/menu-image/4-mon.jpg",
+        "assets/menu-image/combo-1.jpg",
+        "assets/menu-image/combo-2.jpg"
+      ],
+      "gridClass": "gallery-item group relative min-h-[250px] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] cursor-pointer"
+    },
+    {
+      "id": "ban-be",
+      "tagText": "Bạn bè",
+      "title": "Bạn bè tụ hợp",
+      "featuredImg": "assets/restaurant-space/khach-ghe-1.jpg",
+      "images": [
+        "assets/restaurant-space/khach-ghe-1.jpg",
+        "assets/restaurant-space/khach-ghe-3.jpg",
+        "assets/restaurant-space/khach-ghe-4.jpg",
+        "assets/restaurant-space/khach-ghe-6.jpg",
+        "assets/restaurant-space/khach-ghe-8.jpg"
+      ],
+      "gridClass": "gallery-item group relative min-h-[250px] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] cursor-pointer"
+    },
+    {
+      "id": "nuong-tai-ban",
+      "tagText": "Nướng tại bàn",
+      "title": "Trải nghiệm nướng tại bàn",
+      "featuredImg": "assets/restaurant-space/khach-ghe-2.jpg",
+      "images": [
+        "assets/restaurant-space/khach-ghe-2.jpg",
+        "assets/restaurant-space/khach-ghe-5.jpg",
+        "assets/restaurant-space/khach-ghe-7.jpg",
+        "assets/restaurant-space/khach-ghe-9.jpg",
+        "assets/restaurant-space/khach-ghe-10.jpg"
+      ],
+      "gridClass": "gallery-item group relative min-h-[250px] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] cursor-pointer"
+    },
+    {
+      "id": "sinh-nhat",
+      "tagText": "Sinh nhật",
+      "title": "Đặt tiệc sinh nhật",
+      "featuredImg": "assets/restaurant-space/trang-tri-sinh-nhat.jpg",
+      "images": [
+        "assets/restaurant-space/trang-tri-sinh-nhat.jpg",
+        "assets/restaurant-space/trang-tri-sinh-nhat-1.jpg",
+        "assets/restaurant-space/trang-tri-sinh-nhat-2.jpg",
+        "assets/restaurant-space/trang-tri-sinh-nhat-3.jpg"
+      ],
+      "gridClass": "gallery-item group relative min-h-[250px] rounded-xl overflow-hidden border border-[rgba(255,255,255,0.1)] cursor-pointer"
+    }
+  ],
+  "reviews": [
+    {
+      "stars": 5,
+      "content": "Đồ nướng ngon, không gian thoải mái, đi nhóm bạn rất hợp. Sẽ quay lại.",
+      "author": "Anh Minh",
+      "initial": "A"
+    },
+    {
+      "stars": 5,
+      "content": "Combo dễ chọn, giá ổn, nhân viên nhiệt tình. Rất hợp đi cuối tuần.",
+      "author": "Linh Nguyễn",
+      "initial": "L"
+    },
+    {
+      "stars": 5,
+      "content": "Quán có vibe trẻ, đồ ăn lên nhanh, mở Maps là tới được ngay.",
+      "author": "Tuấn Anh",
+      "initial": "T"
+    }
+  ]
+}
