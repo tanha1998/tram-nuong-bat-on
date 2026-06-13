@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://trannuongbaton.run.place/sitemap.xml
+Sitemap: https://tramnuongbaton.run.place/sitemap.xml
